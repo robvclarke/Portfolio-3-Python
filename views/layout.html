@@ -68,7 +68,7 @@
         .xterm .composition-view {
             /* TODO: Composition position got messed up somewhere */
             background: #000;
-            color: #03A062;
+            color: #03A062 !important;
             display: none;
             position: absolute;
             white-space: nowrap;
@@ -82,7 +82,7 @@
         .xterm .xterm-viewport {
             /* On OS X this is required in order for the scroll bar to appear fully opaque */
             background-color: #000;
-            color: #03A062 ;
+            color: #03A062 !important;
             overflow-y: scroll;
             cursor: default;
             position: absolute;
@@ -96,16 +96,19 @@
 
         .xterm .xterm-screen {
             position: relative;
+            color: #03A062 !important;
         }
 
         .xterm .xterm-screen canvas {
             position: absolute;
             left: 0;
             top: 0;
+            color: #03A062 !important;
         }
 
         .xterm .xterm-scroll-area {
             visibility: hidden;
+            color: #03A062 !important;
         }
 
         .xterm-char-measure-element {
@@ -115,24 +118,29 @@
             top: 0;
             left: -9999em;
             line-height: normal;
+            color: #03A062 !important;
         }
 
         .xterm {
             cursor: text;
+            color: #03A062 !important;
         }
 
         .xterm.enable-mouse-events {
             /* When mouse events are enabled (eg. tmux), revert to the standard pointer cursor */
             cursor: default;
+            color: #03A062 !important;
         }
 
         .xterm.xterm-cursor-pointer {
             cursor: pointer;
+            color: #03A062 !important;
         }
 
         .xterm.column-select.focus {
             /* Column selection mode */
             cursor: crosshair;
+            color: #03A062 !important;
         }
 
         .xterm .xterm-accessibility,
@@ -143,7 +151,7 @@
             bottom: 0;
             right: 0;
             z-index: 10;
-            color: transparent;
+            color: #03A062 !important;
         }
 
         .xterm .live-region {
@@ -152,6 +160,7 @@
             width: 1px;
             height: 1px;
             overflow: hidden;
+            color: #03A062 !important;
         }
 
         .xterm-dim {
@@ -160,6 +169,7 @@
 
         .xterm-underline {
             text-decoration: underline;
+            color: #03A062 !important;
         }
 
         button {
