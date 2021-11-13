@@ -1,11 +1,12 @@
 while True:
-    print("Hello Neo...")
-    print("Reality is overrated. We are going to offer you an opportunity to see this.\n")
+    print("Wake up Neo...\n")
+    print("The Matrix has you.\n")
+    print("Follow the white rabbit.\n")
     answer = input("Would you like to follow the white rabbit?(yes/no)\n")
 
     if answer.lower().strip() == "yes":
 
-        answer = input("You must follow the white Rabbit. would you like to follow it left or right?(left/right)\n").lower().strip()
+        answer = input("Would you like to follow it left or right?(left/right)\n").lower().strip()
         if answer == "left":
             answer = input("You encounter an agent, would you like to run or attack?")
 
