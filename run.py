@@ -3,9 +3,26 @@ import pyfiglet
 ascii_banner = pyfiglet.figlet_format("Wake Up Neo...")
 
 while True:
-    print(ascii_banner)
+    print("Wake Up Neo.\n")
     print("The Matrix has you.\n")
     print("Follow the white rabbit...\n")
+    print("""
+   /gg\           /gg\ 
+  /g.gg\         /gg.g\ 
+ |gg..gg\       /gg..gg| 
+ |gg...g|       |g...gg| 
+ |gg...g|       |g...gg| 
+  \gg..g/       \g..gg/ 
+   |gg.gvgggggggvg.gg| 
+  /ggggggggggggggggggg\ 
+ /gggg(((ggggggg)))gggg\ 
+|ggggg....ggggg....ggggg| 
+|ggggg....ggggg....ggggg| 
+|ggcccgggg\___/ggggcccgg| 
+|ggcccccgggg|ggggcccccgg| 
+  \gcccggg\---/gggcccg/ 
+     \ggggggggggggg/
+    """)
     answer = input("Would you like to follow the white rabbit?(yes/no)\n")
 
     if answer.lower().strip() == "yes":
