@@ -1,4 +1,3 @@
-# pip install pyfiglet
 import pyfiglet
 
 ascii_banner = pyfiglet.figlet_format("Wake Up Neo...")
