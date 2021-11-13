@@ -1,7 +1,7 @@
 while True:
     print("Wake up Neo...\n")
     print("The Matrix has you.\n")
-    print("Follow the white rabbit.\n")
+    print("Follow the white rabbit...\n")
     answer = input("Would you like to follow the white rabbit?(yes/no)\n")
 
     if answer.lower().strip() == "yes":
