@@ -1,5 +1,10 @@
+# pip install pyfiglet
+import pyfiglet
+
+ascii_banner = pyfiglet.figlet_format("Wake Up Neo...")
+
 while True:
-    print("Wake up Neo...\n")
+    print(ascii_banner)
     print("The Matrix has you.\n")
     print("Follow the white rabbit...\n")
     answer = input("Would you like to follow the white rabbit?(yes/no)\n")
