@@ -1,19 +1,19 @@
 import random
 
 # good character classes
-class Neo (object):
+class neo (object):
     health = 150
     strength = 10
     defence = 10
     magic = 1
 
-class Morpheus (object):
+class morpheus (object):
     health = 125
     strength = 7 
     defence = 7
     magic = 10
 
-class Trinity (pbject):
+class trinity (object):
     health = 100
     strength = 6
     defence = 8
@@ -22,20 +22,27 @@ class Trinity (pbject):
 
 #bad guy classes
 
-class Agent (object):
+class agent (object):
     name = "Standard Agent"
     health = 20
     strength = 2
     defence = 2
     loot = random.randint(0,2)
 
-class Sentinel (object):
+class sentinel (object):
     name = "Sentinel"
     health = 15
     strength = 3
     defence = 3
     loot = random.randint(0,2)
-    
+
+class smith (object):
+    name = "Agent Smith"
+    health = 20
+    strength = 4
+    defence = 3
+    loot = random.randint(0,2)
+
 
 def main_storyline():
     while True:
