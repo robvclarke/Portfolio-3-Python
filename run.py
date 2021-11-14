@@ -45,7 +45,7 @@ class smith (object):
 
 def heroselect():
     print("Who would you like to play as?")
-    select = input("1.Neo \n2. Morpheus \n3. Trinity \n")
+    selection = input("1. Neo \n2. Morpheus \n3. Trinity \n")
     if selection == "1":
         character = neo
         print("You have selected Neo... These are his game stats...")
@@ -72,6 +72,10 @@ def heroselect():
         print("Defense - ", character.defence)
         print("Magic - ", character.magic)
         return character
+
+    else:
+        print("Input Error! Only press 1,2 or 3")
+        heroselect()
 
 def main_storyline():
     while True:
@@ -127,4 +131,5 @@ def main_storyline():
             print("that's too bad")
             break
 
-main_storyline()
+#main_storyline()
+heroselect()
