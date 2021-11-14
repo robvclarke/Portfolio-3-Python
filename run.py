@@ -1,19 +1,19 @@
 import random
 
 # good character classes
-class neo (object):
+class Neo (object):
     health = 150
     strength = 10
     defence = 10
     magic = 1
 
-class morpheus (object):
+class Morpheus (object):
     health = 125
     strength = 7 
     defence = 7
     magic = 10
 
-class trinity (pbject):
+class Trinity (pbject):
     health = 100
     strength = 6
     defence = 8
@@ -22,11 +22,18 @@ class trinity (pbject):
 
 #bad guy classes
 
-class agent (object):
-    name = "Agent"
+class Agent (object):
+    name = "Standard Agent"
     health = 20
     strength = 2
     defence = 2
+    loot = random.randint(0,2)
+
+class Sentinel (object):
+    name = "Sentinel"
+    health = 15
+    strength = 3
+    defence = 3
     loot = random.randint(0,2)
     
 
