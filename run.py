@@ -55,6 +55,23 @@ def heroselect():
         print("Magic - ", character.magic)
         return character
 
+    elif selection == "2":
+        character = morpheus
+        print("You have selected Morpheus... These are his game stats...")
+        print("Health - ", character.health)
+        print("Strength - ", character.strength)
+        print("Defense - ", character.defence)
+        print("Magic - ", character.magic)
+        return character
+
+    elif selection == "3":
+        character = trinity
+        print("You have selected Trinity... These are his game stats...")
+        print("Health - ", character.health)
+        print("Strength - ", character.strength)
+        print("Defense - ", character.defence)
+        print("Magic - ", character.magic)
+        return character
 
 def main_storyline():
     while True:
