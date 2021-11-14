@@ -1,3 +1,23 @@
+import random
+# good character classes
+class neo (object):
+    health = 150
+    strength = 10
+    defence = 10
+    magic = 1
+
+class morpheus (object):
+    health = 125
+    strength = 7 
+    defence = 7
+    magic = 10
+
+class trinity (pbject):
+    health = 100
+    strength = 6
+    defence = 8
+    magic = 5
+
 def main_storyline():
     while True:
         print("Wake Up.\n")
