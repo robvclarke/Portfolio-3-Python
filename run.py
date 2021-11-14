@@ -1,4 +1,5 @@
 import random
+
 # good character classes
 class neo (object):
     health = 150
@@ -17,6 +18,17 @@ class trinity (pbject):
     strength = 6
     defence = 8
     magic = 5
+
+
+#bad guy classes
+
+class agent (object):
+    name = "Agent"
+    health = 20
+    strength = 2
+    defence = 2
+    loot = random.randint(0,2)
+    
 
 def main_storyline():
     while True:
