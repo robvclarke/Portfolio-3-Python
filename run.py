@@ -44,8 +44,16 @@ class smith (object):
     loot = random.randint(0,2)
 
 def heroselect():
-    print ("Who would you like to play as?")
+    print("Who would you like to play as?")
     select = input("1.Neo \n2. Morpheus \n3. Trinity \n")
+    if selection == "1":
+        character = neo
+        print("You have selected Neo... These are his game stats...")
+        print("Health - ", character.health)
+        print("Strength - ", character.strength)
+        print("Defense - ", character.defence)
+        print("Magic - ", character.magic)
+        return character
 
 
 def main_storyline():
