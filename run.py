@@ -43,6 +43,10 @@ class smith (object):
     defence = 3
     loot = random.randint(0,2)
 
+def heroselect():
+    print ("Who would you like to play as?")
+    select = input("1.Neo \n2. Morpheus \n3. Trinity \n")
+
 
 def main_storyline():
     while True:
