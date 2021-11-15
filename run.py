@@ -84,6 +84,10 @@ def enemyselect(agent,sentinel,smith):
     return enemy
 
 def loot():
+    loot = ["Uzi","Leather Jacket","Katana"]
+    lootChance = random.randint(0,2)
+    lootDrop = loot[lootChance]
+    return lootDrop
 
 
 def main_storyline():
