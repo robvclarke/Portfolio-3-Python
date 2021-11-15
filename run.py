@@ -2,7 +2,7 @@ import random
 
 # good character classes
 class neo (object):
-    health = 5
+    health = 25
     strength = 5
     defence = 10
     magic = 1
@@ -296,3 +296,5 @@ score = 0
 character = heroselect()
 score = battleState(score)
 print(score)
+
+
