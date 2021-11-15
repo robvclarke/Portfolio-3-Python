@@ -127,11 +127,7 @@ def battleState():
                 print("You have angered", enemy.name, "they attack viciously")
                 character.health = character.health - enemy.strength
                 print("Your health is now:", character.health)
-
-        """
-        If they press 2
-        """
-        
+ 
         elif choice == "2":
             print("You bend backwards in slow motion dodging", enemy.name,"and then let fly with a Kung-Fu kick!")
             hitchance = random.randint(0,10)
@@ -163,6 +159,21 @@ def battleState():
                 print(enemy.name, "is furious and attacks wildly")
                 character.health = character.health - enemy.strength
                 print("Your health is now:", character.health)
+
+        elif choice == "3":
+            print("You try to run...")
+            runchance = randome.randit(1,10)
+            if runchance > 4:
+                print("You leg it inside a phonebox and escape")
+                break
+            else:
+                print("As you try to run, your leather snags on something and you slip\n")
+                print(enemy.name, "laughs at your cowards and then attacks in a bloodythirsty fashion\n")
+                character.health = character.health - enemy.strength
+                print("Your health has taken a whack it is now:", character.health)
+        
+        else:
+            print("Input Error! You must only type the number 1,2 or 3 on the keyboard.")
             
 
 
