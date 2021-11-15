@@ -5,19 +5,19 @@ class neo (object):
     health = 25
     strength = 5
     defence = 10
-    magic = 1
+    agility = 1
 
 class morpheus (object):
     health = 125
     strength = 7 
     defence = 7
-    magic = 10
+    agility= 10
 
 class trinity (object):
     health = 100
     strength = 6
     defence = 8
-    magic = 5
+    agility = 5
 
 #bad guy classes
 
@@ -90,7 +90,7 @@ def heroselect():
 
     elif selection == "3":
         character = trinity
-        print("You have selected Trinity... These are his game stats...")
+        print("You have selected Trinity... These are her game stats...")
         print("Health - ", character.health)
         print("Strength - ", character.strength)
         print("Defense - ", character.defence)
