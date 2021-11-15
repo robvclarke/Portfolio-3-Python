@@ -170,7 +170,7 @@ def battleState(score, character):
                     print("But wait!", enemy.name,"dropped something of value")
                     lootDrop = loot()
                     print("You just got a", lootDrop)
-                    redlootEffect(lootDrop, character)
+                    lootEffect(lootDrop, character)
                     return score
                     break
             else:
@@ -210,7 +210,7 @@ def battleState(score, character):
                     print("But wait!", enemy.name,"dropped something of value")
                     lootDrop = loot()
                     print("You just got a", lootDrop)
-                    redlootEffect(lootDrop, character)
+                    lootEffect(lootDrop, character)
                     return score
                     break
             else:
