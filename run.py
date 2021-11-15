@@ -48,7 +48,25 @@ def gameOver(character, score):
         print("You are out of health and about to be made slave concubine to the Deus Ex Machina for the remainder of your days\n")
         print("Game Over")
         print("Your final score is", score)
+        name = input("Add your name to your score...")
+        writeScore(score,name)
+
+        file=open("score.txt","r")
+
+        for line in file:
+            xline = line.split(",")
+            print(xline[0], xline[1])
+
         exit()
+
+def writeScore(score,name):
+    file = open("score.txt","a")
+    file.write(str(name))
+    file.write(",")
+    file.write(str(score))
+    file.write(",")
+    file.write("\n")
+    file.close()
 
 def heroselect():
     print("Who would you like to play as?")
