@@ -43,6 +43,12 @@ class smith (object):
     defence = 3
     loot = random.randint(0,2)
 
+def gameOver(character):
+    if character.health > 1:
+        print("You are out of health and about to be made slave concubine to the Deus Ex Machina for the remainder of your days\n")
+        print("Game Over")
+        exit()
+
 def heroselect():
     print("Who would you like to play as?")
     selection = input("1. Neo \n2. Morpheus \n3. Trinity \n")
@@ -106,6 +112,7 @@ def battleState():
                 if enemy.health > 0:
                     character.health = character.health - (enemy.strength / character.defence)
                     print (enemy.name, "retaliates like a maniac, they clobber you! Reducing your health to", character.health)
+                    gameOver(character)
 
                 else:
                     if enemy.name == "Standard Agent":
@@ -127,6 +134,7 @@ def battleState():
                 print("You have angered", enemy.name, "they attack viciously")
                 character.health = character.health - enemy.strength
                 print("Your health is now:", character.health)
+                gameOver(character)
  
         elif choice == "2":
             print("You bend backwards in slow motion dodging", enemy.name,"and then let fly with a Kung-Fu kick!")
@@ -138,6 +146,7 @@ def battleState():
                 if enemy.health > 0:
                     character.health = character.health - (enemy.strength / character.defence)
                     print (enemy.name, "retaliates like a maniac, they clobber you! Reducing your health to", character.health)
+                    gameOver(character)
 
                 else:
                     if enemy.name == "Standard Agent":
@@ -159,6 +168,7 @@ def battleState():
                 print(enemy.name, "is furious and attacks wildly")
                 character.health = character.health - enemy.strength
                 print("Your health is now:", character.health)
+                gameOver(character)
 
         elif choice == "3":
             print("You try to run...")
@@ -171,6 +181,7 @@ def battleState():
                 print(enemy.name, "laughs at your cowards and then attacks in a bloodythirsty fashion\n")
                 character.health = character.health - enemy.strength
                 print("Your health has taken a whack it is now:", character.health)
+                gameOver(character)
         
         else:
             print("Input Error! You must only type the number 1,2 or 3 on the keyboard.")
