@@ -77,6 +77,11 @@ def heroselect():
         print("Input Error! Only press 1,2 or 3")
         heroselect()
 
+def enemyselect(agent,sentinel,smith):
+    enemyList = [agent,sentinel,smith]
+    chance = random.randint(0,2)
+    enemy = enemyList[chance]
+
 def main_storyline():
     while True:
         print("Wake Up.\n")
@@ -132,4 +137,4 @@ def main_storyline():
             break
 
 #main_storyline()
-heroselect()
+
