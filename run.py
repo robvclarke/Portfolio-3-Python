@@ -2,7 +2,7 @@ import random
 
 # good character classes
 class neo (object):
-    health = 150
+    health = 100
     strength = 10
     defence = 10
     magic = 1
@@ -95,7 +95,7 @@ def loot():
     lootDrop = loot[lootChance]
     return lootDrop
 
-def battleState(): 
+def battleState(score): 
     enemy = enemyselect(agent,sentinel,smith)
     print("Shit!", enemy.name, "just crashed the party...")
     print("You are probably fucked but you have three options...")
@@ -117,12 +117,15 @@ def battleState():
                 else:
                     if enemy.name == "Standard Agent":
                         enemy.health = 20
+                        score = score + 10
                     
                     elif enemy.name == "Sentinel":
                         enemy.health = 15
+                        score = score + 7
                     
                     elif enemy.name == "Agent Smith":
                         enemy.health = 15
+                        score = score + 13
                     
                     print("You kicked the shit out of", enemy.name,"they are very dead... for now")
                     print("But wait!", enemy.name,"dropped something of value")
@@ -151,12 +154,15 @@ def battleState():
                 else:
                     if enemy.name == "Standard Agent":
                         enemy.health = 20
+                        score = score + 10
                     
                     elif enemy.name == "Sentinel":
                         enemy.health = 15
+                        score = score + 7
                     
                     elif enemy.name == "Agent Smith":
                         enemy.health = 15
+                        score = score + 13
                     
                     print("You kicked the shit out of", enemy.name,"they are very dead... for now")
                     print("But wait!", enemy.name,"dropped something of value")
@@ -242,6 +248,7 @@ def main_storyline():
             print("that's too bad")
             break
 
+score = 0
 character = heroselect()
 battleState()
 
