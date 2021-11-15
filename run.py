@@ -93,9 +93,9 @@ def battleState():
     enemy = enemyselect(agent,sentinel,smith)
     print("Shit!", enemy.name, "just crashed the party...")
     print("You are probably fucked but you have three options...")
+    print("Type either 1, 2 or 3 on your keyboard to make your selection")
     while enemy.health > 0 : 
         choice = input("1. Shoot at enemy while holding gun sideways\n2. Slow-mo dodge the enemy then Kung Fu their ass\n3. Run for your life\n")
-
         if choice == "1":
             print("You let off a clip, riddling", enemy.name,"with bullets")
             hitchance = random.randint(0,10)
@@ -127,6 +127,43 @@ def battleState():
                 print("You have angered", enemy.name, "they attack viciously")
                 character.health = character.health - enemy.strength
                 print("Your health is now:", character.health)
+
+        """
+        If they press 2
+        """
+        
+        elif choice == "2":
+            print("You bend backwards in slow motion dodging", enemy.name,"and then let fly with a Kung-Fu kick!")
+            hitchance = random.randint(0,10)
+            if hitchance > 3:
+                enemy.health = enemy.health - character.strength
+                print("You hit", enemy.name, "their health is now =", enemy.health)
+
+                if enemy.health > 0:
+                    character.health = character.health - (enemy.strength / character.defence)
+                    print (enemy.name, "retaliates like a maniac, they clobber you! Reducing your health to", character.health)
+
+                else:
+                    if enemy.name == "Standard Agent":
+                        enemy.health = 20
+                    
+                    elif enemy.name == "Sentinel":
+                        enemy.health = 15
+                    
+                    elif enemy.name == "Agent Smith":
+                        enemy.health = 15
+                    
+                    print("You kicked the shit out of", enemy.name,"they are very dead... for now")
+                    print("But wait!", enemy.name,"dropped something of value")
+                    lootDrop = loot()
+                    print("You just got a", lootDrop,)
+                    break
+            else:
+                print("You slip on a banana skin and miss", enemy.name, "with your kick")
+                print(enemy.name, "is furious and attacks wildly")
+                character.health = character.health - enemy.strength
+                print("Your health is now:", character.health)
+            
 
 
 def main_storyline():
