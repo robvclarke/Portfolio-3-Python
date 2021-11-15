@@ -2,8 +2,8 @@ import random
 
 # good character classes
 class neo (object):
-    health = 30
-    strength = 10
+    health = 5
+    strength = 5
     defence = 10
     magic = 1
 
@@ -112,7 +112,7 @@ def battleState(score):
                 print("You hit", enemy.name, "their health is now =", enemy.health)
 
                 if enemy.health > 1:
-                    character.health = character.health - (enemy.strength / character.defence)
+                    character.health = character.health - enemy.strength
                     print (enemy.name, "retaliates like a maniac, they clobber you! Reducing your health to", character.health)
                     gameOver(character, score)
 
@@ -152,7 +152,7 @@ def battleState(score):
                 print("You hit", enemy.name, "their health is now =", enemy.health)
 
                 if enemy.health > 0:
-                    character.health = character.health - (enemy.strength / character.defence)
+                    character.health = character.health - enemy.strength
                     print(enemy.name, "retaliates like a maniac, they clobber you! Reducing your health to", character.health)
                     gameOver(character, score)
 
