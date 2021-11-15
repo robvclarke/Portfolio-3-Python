@@ -267,21 +267,31 @@ def main_storyline(score):
             print("You arrive in a strange techno club where they are playing Rob Zombie...\n")
             print("A man you have never met wearing sunglasses invites you to sit down...\n")
             answer = input("Do you want to take the red pill or the blue pill?(red/blue)\n").lower().strip()
-            if answer == "left":
-                answer = input("You encounter an agent, would you like to run or attack?\n")
+            if answer == "red":
+                print("The man explains to you that reality is a construct...\n")
+                print("He explains that you are potentially a saviour to all mankind...\n")
+                answer = input("Do you trust him? (yes/no)\n").lower().strip()
 
-                if answer == "attack":
-                    print("that was not the greatest idea, you lost")
+                if answer == "no":
+                    print("He senses your distrust and removes your mouth\n")
+                    print("He then shoots you in the head\n")
+                    gameOver(character, score)
+                    
                 else:
-                    print("good choice you made it away")
+                    print("Good he is going to teach you loads of cool shit...")
+                    print("But just as he is about to teach you how to jump over buildings...")
+                    battleState(score, character)
 
-                    answer = input("Another agent appears in the distance and fires a gun at you? Do you try and dodge it or run? (dodge/run)\n").lower().strip()
+                    answer = input("A woman called the Oracle asks you if you want to risk all for love? (yes/no)\n").lower().strip()
 
-                    if answer == "run":
-                        print("You can't outrun a bullet... Game over\n")
+                    if answer == "yes":
+                        print("She smiles\n")
+                        print("You brought peace between Man and Machine. You won the game you legend!")
+                        break
                     else:
-                        print("You dodged the bullet and brought peace between Man and Machine. You won the game you legend! The game will start over below\n")
-
+                        print("The oracle thinks you are a prude...\n")
+                        print("She stabs you with a bent spoon...\n")
+                        gameOver(character, score)
 
             elif answer == "blue":
                 print("You wake up the next day in your bed and remember nothing\n")
