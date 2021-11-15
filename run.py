@@ -81,6 +81,10 @@ def enemyselect(agent,sentinel,smith):
     enemyList = [agent,sentinel,smith]
     chance = random.randint(0,2)
     enemy = enemyList[chance]
+    return enemy
+
+def loot():
+
 
 def main_storyline():
     while True:
