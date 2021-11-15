@@ -119,7 +119,10 @@ def battleState():
                     
                     print("You kicked the shit out of", enemy.name,"they are very dead... for now")
                     print("But wait!", enemy.name,"dropped something of value")
+                    lootDrop = loot()
+                    print("You just got a", lootDrop,)
                     
+
 
 def main_storyline():
     while True:
