@@ -2,7 +2,7 @@ import random
 
 # good character classes
 class neo (object):
-    health = 100
+    health = 30
     strength = 10
     defence = 10
     magic = 1
@@ -44,7 +44,7 @@ class smith (object):
     loot = random.randint(0,2)
 
 def gameOver(character, score):
-    if character.health > 1:
+    if character.health < 1:
         print("You are out of health and about to be made slave concubine to the Deus Ex Machina for the remainder of your days\n")
         print("Game Over")
         print("Your final score is", score)
@@ -103,6 +103,7 @@ def battleState(score):
     print("Type either 1, 2 or 3 on your keyboard to make your selection")
     while enemy.health > 0 : 
         choice = input("1. Shoot at enemy while holding gun sideways\n2. Slow-mo dodge the enemy then Kung Fu their ass\n3. Run for your life\n")
+
         if choice == "1":
             print("You let off a clip, riddling", enemy.name,"with bullets")
             hitchance = random.randint(0,10)
@@ -110,10 +111,10 @@ def battleState(score):
                 enemy.health = enemy.health - character.strength
                 print("You hit", enemy.name, "their health is now =", enemy.health)
 
-                if enemy.health > 0:
+                if enemy.health > 1:
                     character.health = character.health - (enemy.strength / character.defence)
                     print (enemy.name, "retaliates like a maniac, they clobber you! Reducing your health to", character.health)
-                    gameOver(character)
+                    gameOver(character, score)
 
                 else:
                     if enemy.name == "Standard Agent":
@@ -141,7 +142,7 @@ def battleState(score):
                 print("You have angered", enemy.name, "they attack viciously")
                 character.health = character.health - enemy.strength
                 print("Your health is now:", character.health)
-                gameOver(character)
+                gameOver(character, score)
  
         elif choice == "2":
             print("You bend backwards in slow motion dodging", enemy.name,"and then let fly with a Kung-Fu kick!")
@@ -152,8 +153,8 @@ def battleState(score):
 
                 if enemy.health > 0:
                     character.health = character.health - (enemy.strength / character.defence)
-                    print (enemy.name, "retaliates like a maniac, they clobber you! Reducing your health to", character.health)
-                    gameOver(character)
+                    print(enemy.name, "retaliates like a maniac, they clobber you! Reducing your health to", character.health)
+                    gameOver(character, score)
 
                 else:
                     if enemy.name == "Standard Agent":
@@ -181,7 +182,7 @@ def battleState(score):
                 print(enemy.name, "is furious and attacks wildly")
                 character.health = character.health - enemy.strength
                 print("Your health is now:", character.health)
-                gameOver(character)
+                gameOver(character, score)
 
         elif choice == "3":
             print("You try to run...")
@@ -194,7 +195,7 @@ def battleState(score):
                 print(enemy.name, "laughs at your cowards and then attacks in a bloodythirsty fashion\n")
                 character.health = character.health - enemy.strength
                 print("Your health has taken a whack it is now:", character.health)
-                gameOver(character)
+                gameOver(character, score)
         
         else:
             print("Input Error! You must only type the number 1,2 or 3 on the keyboard.")
@@ -257,5 +258,5 @@ def main_storyline():
 
 score = 0
 character = heroselect()
-battleState()
-
+score = battleState(score)
+print(score)
