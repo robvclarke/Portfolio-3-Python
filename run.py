@@ -170,7 +170,7 @@ def battleState(score, character):
                     print("But wait!", enemy.name,"dropped something of value")
                     lootDrop = loot()
                     print("You just got a", lootDrop)
-                    lootEffect(lootDrop, character)
+                    redlootEffect(lootDrop, character)
                     return score
                     break
             else:
@@ -196,22 +196,22 @@ def battleState(score, character):
                     if enemy.name == "Standard Agent":
                         enemy.health = 20
                         score = score + 10
-                        return score
-                    
+                        
                     elif enemy.name == "Sentinel":
                         enemy.health = 15
                         score = score + 7
-                        return score
-                    
+                        
                     elif enemy.name == "Agent Smith":
                         enemy.health = 15
                         score = score + 13
-                        return score
+                        
                     
                     print("You kicked the shit out of", enemy.name,"they are very dead... for now")
                     print("But wait!", enemy.name,"dropped something of value")
                     lootDrop = loot()
-                    print("You just got a", lootDrop,)
+                    print("You just got a", lootDrop)
+                    redlootEffect(lootDrop, character)
+                    return score
                     break
             else:
                 print("You slip on a banana skin and miss", enemy.name, "with your kick")
