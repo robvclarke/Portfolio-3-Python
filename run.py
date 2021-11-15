@@ -162,7 +162,7 @@ def battleState():
 
         elif choice == "3":
             print("You try to run...")
-            runchance = randome.randit(1,10)
+            runchance = random.randint(1,10)
             if runchance > 4:
                 print("You leg it inside a phonebox and escape")
                 break
