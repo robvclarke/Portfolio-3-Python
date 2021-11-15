@@ -101,7 +101,7 @@ def battleState():
             hitchance = random.randint(0,10)
             if hitchance > 3:
                 enemy.health = enemy.health - character.strength
-                print("You hit," enemy.name, "their health is now =", enemy.health)
+                print("You hit", enemy.name, "their health is now =", enemy.health)
 
                 if enemy.health > 0:
                     character.health = character.health - (enemy.strength / character.defence)
@@ -125,6 +125,8 @@ def battleState():
             else:
                 print("You look class holding your gun sideways but sadly you miss", enemy.name)
                 print("You have angered", enemy.name, "they attack viciously")
+                character.health = character.health - enemy.strength
+                print("Your health is now:", character.health)
 
 
 def main_storyline():
@@ -181,6 +183,6 @@ def main_storyline():
             print("that's too bad")
             break
 
-#main_storyline()
+character = heroselect()
 battleState()
 
