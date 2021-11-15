@@ -123,7 +123,7 @@ def lootEffect(lootDrop, character):
     elif lootDrop == "Leather Jacket":
         character.defence = character.defence + 10
         print("You put on the leather jacket! Increasing your defense by 10")
-        print("Your defense is now", character.defense)
+        print("Your defense is now", character.defence)
         return character
 
     elif lootDrop == "Katana":
@@ -133,7 +133,7 @@ def lootEffect(lootDrop, character):
         return character
     
      
-def battleState(score): 
+def battleState(score, character): 
     enemy = enemyselect(agent,sentinel,smith)
     print("Shit!", enemy.name, "just crashed the party...")
     print("You are probably fucked but you have three options...")
@@ -238,7 +238,7 @@ def battleState(score):
             
 
 
-def main_storyline():
+def main_storyline(score):
     while True:
         print("Wake Up.\n")
         print("The Matrix has you.\n")
@@ -260,11 +260,13 @@ def main_storyline():
       \gcccggg\---/gggcccg/ 
          \ggggggggggggg/
         """)
-        answer = input("Would you like to follow the white rabbit?(yes/no)\n")
-
+        character = heroselect()
+        answer = input("Would you like to follow the white rabbit?(yes/no)\n").lower().strip()
         if answer.lower().strip() == "yes":
-
-            answer = input("Would you like to follow it left or right?(left/right)\n").lower().strip()
+            battleState(score, character)
+            print("You arrive in a strange techno club where they are playing Rob Zombie...\n")
+            print("A man you have never met wearing sunglasses invites you to sit down...\n")
+            answer = input("Do you want to take the red pill or the blue pill?(red/blue)\n").lower().strip()
             if answer == "left":
                 answer = input("You encounter an agent, would you like to run or attack?\n")
 
@@ -281,11 +283,12 @@ def main_storyline():
                         print("You dodged the bullet and brought peace between Man and Machine. You won the game you legend! The game will start over below\n")
 
 
-            elif answer == "right":
-                print("You chose the wrong hole. Game Over\n")
+            elif answer == "blue":
+                print("You wake up the next day in your bed and remember nothing\n")
+                gameOver(character, score)
 
             else: 
-                print("invalid choice, you lost")
+                print("invalid choice, type in either red or blue")
 
 
         else:
@@ -293,8 +296,6 @@ def main_storyline():
             break
 
 score = 0
-character = heroselect()
-score = battleState(score)
-print(score)
+score =main_storyline(score)
 
 
