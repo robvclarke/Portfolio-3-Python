@@ -121,7 +121,10 @@ def battleState():
                     print("But wait!", enemy.name,"dropped something of value")
                     lootDrop = loot()
                     print("You just got a", lootDrop,)
-                    
+                    break
+            else:
+                print("You look class holding your gun sideways but sadly you miss", enemy.name)
+                print("You have angered", enemy.name, "they attack viciously")
 
 
 def main_storyline():
