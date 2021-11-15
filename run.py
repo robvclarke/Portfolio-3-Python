@@ -239,7 +239,6 @@ def battleState(score, character):
 
 
 def main_storyline(score):
-    while True:
         print("Wake Up.\n")
         print("The Matrix has you.\n")
         print("Follow the white rabbit...\n")
