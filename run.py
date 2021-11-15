@@ -19,7 +19,6 @@ class trinity (object):
     defence = 8
     magic = 5
 
-
 #bad guy classes
 
 class agent (object):
@@ -113,6 +112,28 @@ def loot():
     lootChance = random.randint(0,2)
     lootDrop = loot[lootChance]
     return lootDrop
+
+def lootEffect(lootDrop, character):
+    if lootDrop == "Uzi":
+        character.strength = character.strength + 5
+        print("You cock the Uzi and put it in your jacket! Increasing your health by 5")
+        print("Your strength is now", character.strength)
+        return character
+
+    elif lootDrop == "Leather Jacket":
+        character.defence = character.defence + 10
+        print("You put on the leather jacket! Increasing your defense by 10")
+        print("Your defense is now", character.defense)
+        return character
+
+    elif lootDrop == "Katana":
+        character.strength = character.strength + 8
+        print("You sheath the katana and strap it to your back! Increasing your strength by 8")
+        print("Your strength is now", character.strength)
+        return character
+    
+     
+
 
 def battleState(score): 
     enemy = enemyselect(agent,sentinel,smith)
