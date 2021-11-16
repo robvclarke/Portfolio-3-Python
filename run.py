@@ -76,7 +76,7 @@ def heroselect():
         print("Health - ", character.health)
         print("Strength - ", character.strength)
         print("Defense - ", character.defence)
-        print("Magic - ", character.magic)
+        print("Agility - ", character.agility)
         return character
 
     elif selection == "2":
@@ -85,7 +85,7 @@ def heroselect():
         print("Health - ", character.health)
         print("Strength - ", character.strength)
         print("Defense - ", character.defence)
-        print("Magic - ", character.magic)
+        print("Agility - ", character.agility)
         return character
 
     elif selection == "3":
@@ -94,7 +94,7 @@ def heroselect():
         print("Health - ", character.health)
         print("Strength - ", character.strength)
         print("Defense - ", character.defence)
-        print("Magic - ", character.magic)
+        print("Agility - ", character.agility)
         return character
 
     else:
@@ -121,7 +121,7 @@ def lootEffect(lootDrop, character):
         return character
 
     elif lootDrop == "Leather Jacket":
-        character.defence = character.defence + 10
+        character.agility = character.agility + 10
         print("You put on the leather jacket! Increasing your defense by 10")
         print("Your defense is now", character.defence)
         return character
@@ -286,7 +286,7 @@ def main_storyline(score):
                     if answer == "yes":
                         print("She smiles\n")
                         print("You brought peace between Man and Machine. You won the game you legend!")
-                        break
+
                     else:
                         print("The oracle thinks you are a prude...\n")
                         print("She stabs you with a bent spoon...\n")
@@ -302,9 +302,11 @@ def main_storyline(score):
 
         else:
             print("that's too bad")
-            break
+            gameOver(character, score)
+            
 
 score = 0
-score =main_storyline(score)
-
+score = main_storyline(score)
+gameOver(character, score)
+writeScore(score,name)
 
