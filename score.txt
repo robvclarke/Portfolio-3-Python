@@ -1,4 +1,3 @@
-HIGH SCORES
 Rob,0,
 Bill,0,
 ,None,
