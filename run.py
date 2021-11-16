@@ -1,6 +1,6 @@
 import random
 
-# good character classes
+# classes for characters you can choose to play as
 
 
 class neo (object):
@@ -23,7 +23,7 @@ class trinity (object):
     defence = 8
     agility = 5
 
-# bad guy classes
+# classes for the enemies you will face
 
 
 class agent (object):
