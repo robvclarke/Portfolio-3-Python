@@ -8,7 +8,7 @@ class neo (object):
     strength = 5
     defence = 10
     agility = 1
-    score = 2
+    score = 0
 
 
 class morpheus (object):
@@ -53,13 +53,13 @@ class smith (object):
     loot = random.randint(0, 2)
 
 
-def gameOver(character, full_health = False):
+def gameOver(character, name, full_health = False):
 
     if full_health:
         print("Game Over")
         print("Your final score is", character.score)
         name = input("Add your name to your score...")
-        writeScore(character.score, name)
+        writeScore(name)
 
         file = open("score.txt", "r")
 
@@ -74,7 +74,7 @@ def gameOver(character, full_health = False):
         print("Game Over")
         print("Your final score is", character.score)
         name = input("Add your name to your score...")
-        writeScore(score, name)
+        writeScore(name)
 
         file = open("score.txt", "r")
 
@@ -85,7 +85,7 @@ def gameOver(character, full_health = False):
         exit()
 
 
-def writeScore(score):
+def writeScore(name):
     name = ""
     file = open("score.txt", "a")
     file.write(str(name))
@@ -180,14 +180,12 @@ def battleState(character):
             hitchance = random.randint(0, 10)
             if hitchance > 3:
                 enemy.health = enemy.health - character.strength
-                print("You hit", enemy.name,
-                      "their health is now =", enemy.health)
+                print("You hit", enemy.name,"their health is now =", enemy.health)
 
                 if enemy.health > 1:
                     character.health = character.health - enemy.strength
-                    print(
-                        enemy.name, "retaliates like a maniac, they clobber you! Reducing your health to", character.health)
-                    gameOver(character)
+                    print(enemy.name, "retaliates like a maniac, they clobber you! Reducing your health to", character.health)
+                    gameOver(character, name)
 
                 else:
                     if enemy.name == "Standard Agent":
@@ -202,26 +200,22 @@ def battleState(character):
                         enemy.health = 15
                         character.score = character.score + 13
 
-                    print("You kicked the shit out of", enemy.name,
-                          "they are very dead... for now")
-                    print("But wait!", enemy.name,
-                          "dropped something of value")
+                    print("You kicked the shit out of", enemy.name,"they are very dead... for now")
+                    print("But wait!", enemy.name,"dropped something of value")
                     lootDrop = loot()
                     print("You just got a", lootDrop)
                     lootEffect(lootDrop, character)
                     return character.score
                     break
             else:
-                print(
-                    "You look class holding your gun sideways but sadly you miss", enemy.name)
+                print("You look class holding your gun sideways but sadly you miss", enemy.name)
                 print("You have angered", enemy.name, "they attack viciously")
                 character.health = character.health - enemy.strength
                 print("Your health is now:", character.health)
-                gameOver(character)
+                gameOver(character, name)
 
         elif choice == "2":
-            print("You bend backwards in slow motion dodging",
-                  enemy.name, "and then let fly with a Kung-Fu kick!")
+            print("You bend backwards in slow motion dodging",enemy.name, "and then let fly with a Kung-Fu kick!")
             hitchance = random.randint(0, 10)
             if hitchance > 3:
                 enemy.health = enemy.health - character.strength
@@ -230,9 +224,8 @@ def battleState(character):
 
                 if enemy.health > 0:
                     character.health = character.health - enemy.strength
-                    print(
-                        enemy.name, "retaliates like a maniac, they clobber you! Reducing your health to", character.health)
-                    gameOver(character)
+                    print(enemy.name, "retaliates like a maniac, they clobber you! Reducing your health to", character.health)
+                    gameOver(character, name)
 
                 else:
                     if enemy.name == "Standard Agent":
@@ -248,22 +241,19 @@ def battleState(character):
                         enemy.health = 15
                         character.score = character.score + 13
 
-                    print("You kicked the shit out of", enemy.name,
-                          "they are very dead... for now")
-                    print("But wait!", enemy.name,
-                          "dropped something of value")
+                    print("You kicked the shit out of", enemy.name,"they are very dead... for now")
+                    print("But wait!", enemy.name,"dropped something of value")
                     lootDrop = loot()
                     print("You just got a", lootDrop)
                     lootEffect(lootDrop, character)
                     return character.score
                     break
             else:
-                print("You slip on a banana skin and miss",
-                      enemy.name, "with your kick")
+                print("You slip on a banana skin and miss",enemy.name, "with your kick")
                 print(enemy.name, "is furious and attacks wildly")
                 character.health = character.health - enemy.strength
                 print("Your health is now:", character.health)
-                gameOver(character)
+                gameOver(character, name)
 
         elif choice == "3":
             print("You try to run...")
@@ -272,90 +262,81 @@ def battleState(character):
                 print("You leg it inside a phonebox and escape")
                 break
             else:
-                print(
-                    "As you try to run, your leather snags on something and you slip\n")
-                print(
-                    enemy.name, "laughs at your cowards and then attacks in a bloodythirsty fashion\n")
+                print("As you try to run, your leather snags on something and you slip\n")
+                print(enemy.name, "laughs at your cowards and then attacks in a bloodythirsty fashion\n")
                 character.health = character.health - enemy.strength
                 print("Your health has taken a whack it is now:", character.health)
-                gameOver(character)
+                gameOver(character, name)
 
         else:
             print("Input Error! You must only type the number 1,2 or 3 on the keyboard.")
 
 
 def main_storyline(score):
-    while True:
-        print("Wake Up.\n")
-        print("The Matrix has you.\n")
-        print("Follow the white rabbit...\n")
-        print("""
-        /gg\           /gg\ 
-        /g.gg\         /gg.g\ 
-        |gg..gg\       /gg..gg| 
-        |gg...g|       |g...gg| 
-        |gg...g|       |g...gg| 
-        \gg..g/       \g..gg/ 
-        |gg.gvgggggggvg.gg| 
-        /ggggggggggggggggggg\ 
-        /gggg(((ggggggg)))gggg\ 
-        |ggggg....ggggg....ggggg| 
-        |ggggg....ggggg....ggggg| 
-        |ggcccgggg\___/ggggcccgg| 
-        |ggcccccgggg|ggggcccccgg| 
-        \gcccggg\---/gggcccg/ 
-            \ggggggggggggg/
-            """)
-        character = heroselect()
-        answer = input(
-            "Would you like to follow the white rabbit?(yes/no)\n").lower().strip()
-        if answer.lower().strip() == "yes":
-            battleState(character)
-            print("You arrive in a strange techno club where they are playing Rob Zombie...\n")
-            print("A man you have never met wearing sunglasses invites you to sit down...\n")
-            answer = input(
-                "Do you want to take the red pill or the blue pill?(red/blue)\n").lower().strip()
-            if answer == "red":
-                print("The man explains to you that reality is a construct...\n")
-                print("He explains that you are potentially a saviour to all mankind...\n")
-                answer = input("Do you trust him? (yes/no)\n").lower().strip()
+    print("Wake Up.\n")
+    print("The Matrix has you.\n")
+    print("Follow the white rabbit...\n")
+    print("""
+       /gg\           /gg\ 
+      /g.gg\         /gg.g\ 
+     |gg..gg\       /gg..gg| 
+     |gg...g|       |g...gg| 
+     |gg...g|       |g...gg| 
+      \gg..g/       \g..gg/ 
+       |gg.gvgggggggvg.gg| 
+      /ggggggggggggggggggg\ 
+     /gggg(((ggggggg)))gggg\ 
+    |ggggg....ggggg....ggggg| 
+    |ggggg....ggggg....ggggg| 
+    |ggcccgggg\___/ggggcccgg| 
+    |ggcccccgggg|ggggcccccgg| 
+      \gcccggg\---/gggcccg/ 
+         \ggggggggggggg/
+        """)
+    character = heroselect()
+    answer = input("Would you like to follow the white rabbit?(yes/no)\n").lower().strip()
+    if answer.lower().strip() == "yes":
+        battleState(character)
+        print("You arrive in a strange techno club where they are playing Rob Zombie...\n")
+        print("A man you have never met wearing sunglasses invites you to sit down...\n")
+        answer = input("Do you want to take the red pill or the blue pill?(red/blue)\n").lower().strip()
+        if answer == "red":
+            print("The man explains to you that reality is a construct...\n")
+            print("He explains that you are potentially a saviour to all mankind...\n")
+            answer = input("Do you trust him? (yes/no)\n").lower().strip()
 
-                if answer == "no":
-                    print("He senses your distrust and removes your mouth\n")
-                    print("He then shoots you in the head\n")
-                    gameOver(character)
-
-                else:
-                    print("Good he is going to teach you loads of cool shit...")
-                    print(
-                        "But just as he is about to teach you how to jump over buildings...")
-                    battleState(character)
-
-                    answer = input(
-                        "A woman called the Oracle asks you if you want to risk all for love? (yes/no)\n").lower().strip()
-
-                    if answer == "yes":
-                        print("She smiles\n")
-                        print(
-                            "You brought peace between Man and Machine. You won the game you legend!")
-
-                    else:
-                        print("The oracle thinks you are a prude...\n")
-                        print("She stabs you with a bent spoon...\n")
-                        gameOver(character, True)
-
-            elif answer == "blue":
-                print("You wake up the next day in your bed and remember nothing\n")
-                gameOver(character, True)
+            if answer == "no":
+                print("He senses your distrust and removes your mouth\n")
+                print("He then shoots you in the head\n")
+                gameOver(character, name)
 
             else:
-                print("invalid choice, type in either red or blue")
+                print("Good he is going to teach you loads of cool shit...")
+                print("But just as he is about to teach you how to jump over buildings...")
+                battleState(character)
+                answer = input("A woman called the Oracle asks you if you want to risk all for love? (yes/no)\n").lower().strip()
+                if answer == "yes":
+                    print("She smiles\n")
+                    print("You brought peace between Man and Machine. You won the game you legend!")
+
+                else:
+                    print("The oracle thinks you are a prude...\n")
+                    print("She stabs you with a bent spoon...\n")
+                    gameOver(character, name, True)
+
+        elif answer == "blue":
+            print("You wake up the next day in your bed and remember nothing\n")
+            gameOver(character, name, True)
 
         else:
-            print("that's too bad")
-            gameOver(character, True)
+            print("invalid choice, type one of the options in brackets in the statement above ")
+
+    else:
+        print("that's too bad")
+        gameOver(character, name, True)
 
 
 score = 0
+name = ""
 score = main_storyline(score)
-writeScore(score, name)
+writeScore(name)
