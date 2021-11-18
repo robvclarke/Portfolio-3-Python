@@ -9,6 +9,7 @@ class neo (object):
     defence = 10
     agility = 1
     score = 0
+    
 
 
 class morpheus (object):
@@ -17,6 +18,7 @@ class morpheus (object):
     defence = 7
     agility = 10
     score = 0
+    
 
 
 class trinity (object):
@@ -53,13 +55,12 @@ class smith (object):
     loot = random.randint(0, 2)
 
 
-def gameOver(character, name, full_health = False):
+def gameOver(character, full_health = False):
 
     if full_health:
         print("Game Over")
         print("Your final score is", character.score)
-        name = input("Add your name to your score...")
-        writeScore(name)
+        writeScore(character.score)
 
         file = open("score.txt", "r")
 
@@ -73,8 +74,7 @@ def gameOver(character, name, full_health = False):
         print("You are out of health and about to be made slave concubine to the Deus Ex Machina for the remainder of your days\n")
         print("Game Over")
         print("Your final score is", character.score)
-        name = input("Add your name to your score...")
-        writeScore(name)
+        writeScore(character.score)
 
         file = open("score.txt", "r")
 
@@ -85,8 +85,8 @@ def gameOver(character, name, full_health = False):
         exit()
 
 
-def writeScore(name):
-    name = ""
+def writeScore(score):
+    name = input("Add your name to your score...")
     file = open("score.txt", "a")
     file.write(str(name))
     file.write(",")
@@ -212,15 +212,14 @@ def battleState(character):
                 print("You have angered", enemy.name, "they attack viciously")
                 character.health = character.health - enemy.strength
                 print("Your health is now:", character.health)
-                gameOver(character, name)
+                gameOver(character)
 
         elif choice == "2":
             print("You bend backwards in slow motion dodging",enemy.name, "and then let fly with a Kung-Fu kick!")
             hitchance = random.randint(0, 10)
             if hitchance > 3:
                 enemy.health = enemy.health - character.strength
-                print("You hit", enemy.name,
-                      "their health is now =", enemy.health)
+                print("You hit", enemy.name,"their health is now =", enemy.health)
 
                 if enemy.health > 0:
                     character.health = character.health - enemy.strength
@@ -253,7 +252,7 @@ def battleState(character):
                 print(enemy.name, "is furious and attacks wildly")
                 character.health = character.health - enemy.strength
                 print("Your health is now:", character.health)
-                gameOver(character, name)
+                gameOver(character)
 
         elif choice == "3":
             print("You try to run...")
@@ -266,7 +265,7 @@ def battleState(character):
                 print(enemy.name, "laughs at your cowards and then attacks in a bloodythirsty fashion\n")
                 character.health = character.health - enemy.strength
                 print("Your health has taken a whack it is now:", character.health)
-                gameOver(character, name)
+                gameOver(character)
 
         else:
             print("Input Error! You must only type the number 1,2 or 3 on the keyboard.")
@@ -308,7 +307,7 @@ def main_storyline(score):
             if answer == "no":
                 print("He senses your distrust and removes your mouth\n")
                 print("He then shoots you in the head\n")
-                gameOver(character, name)
+                gameOver(character)
 
             else:
                 print("Good he is going to teach you loads of cool shit...")
@@ -322,21 +321,19 @@ def main_storyline(score):
                 else:
                     print("The oracle thinks you are a prude...\n")
                     print("She stabs you with a bent spoon...\n")
-                    gameOver(character, name, True)
+                    gameOver(character, True)
 
         elif answer == "blue":
             print("You wake up the next day in your bed and remember nothing\n")
-            gameOver(character, name, True)
+            gameOver(character, True)
 
         else:
             print("invalid choice, type one of the options in brackets in the statement above ")
 
     else:
         print("that's too bad")
-        gameOver(character, name, True)
+        gameOver(character, True)
 
 
 score = 0
-name = ""
 score = main_storyline(score)
-writeScore(name)
