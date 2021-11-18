@@ -185,7 +185,7 @@ def battleState(character):
                 if enemy.health > 1:
                     character.health = character.health - enemy.strength
                     print(enemy.name, "retaliates like a maniac, they clobber you! Reducing your health to", character.health)
-                    gameOver(character, name)
+                    gameOver(character)
 
                 else:
                     if enemy.name == "Standard Agent":
@@ -224,7 +224,7 @@ def battleState(character):
                 if enemy.health > 0:
                     character.health = character.health - enemy.strength
                     print(enemy.name, "retaliates like a maniac, they clobber you! Reducing your health to", character.health)
-                    gameOver(character, name)
+                    gameOver(character)
 
                 else:
                     if enemy.name == "Standard Agent":
@@ -307,7 +307,7 @@ def main_storyline(score):
             if answer == "no":
                 print("He senses your distrust and removes your mouth\n")
                 print("He then shoots you in the head\n")
-                gameOver(character)
+                gameOver(character, True)
 
             else:
                 print("Good he is going to teach you loads of cool shit...")
