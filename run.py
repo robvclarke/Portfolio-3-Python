@@ -102,7 +102,6 @@ def heroselect():
         print("Health - ", character.health)
         print("Strength - ", character.strength)
         print("Defense - ", character.defence)
-        print("Agility - ", character.agility)
         return character
 
     elif selection == "2":
@@ -111,7 +110,6 @@ def heroselect():
         print("Health - ", character.health)
         print("Strength - ", character.strength)
         print("Defense - ", character.defence)
-        print("Agility - ", character.agility)
         return character
 
     elif selection == "3":
@@ -120,7 +118,6 @@ def heroselect():
         print("Health - ", character.health)
         print("Strength - ", character.strength)
         print("Defense - ", character.defence)
-        print("Agility - ", character.agility)
         return character
 
     else:
