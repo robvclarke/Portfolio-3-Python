@@ -4,28 +4,25 @@ import random
 
 
 class neo (object):
-    health = 25
+    health = 30
     strength = 5
     defence = 10
-    agility = 1
     score = 0
     
 
 
 class morpheus (object):
-    health = 125
+    health = 28
     strength = 7
     defence = 7
-    agility = 10
     score = 0
     
 
 
 class trinity (object):
-    health = 100
+    health = 26
     strength = 6
     defence = 8
-    agility = 5
     score = 0
 
 # classes for the enemies you will face
@@ -153,7 +150,7 @@ def lootEffect(lootDrop, character):
         return character
 
     elif lootDrop == "Leather Jacket":
-        character.agility = character.agility + 10
+        character.defence = character.defence + 10
         print("You put on the leather jacket! Increasing your defense by 10")
         print("Your defense is now", character.defence)
         return character
