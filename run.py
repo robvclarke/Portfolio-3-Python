@@ -157,7 +157,7 @@ def loot_effect(lootDrop, character):
 
 def battle_state(character):
     enemy = enemy_select(Agent, Sentinel, Smith)
-    result = pyfiglet.figlet_format("FIGHT", font = "alligator" )
+    result = pyfiglet.figlet_format("F I G H T", font = "alphabet" )
     print(result)
     print(bcolors.OKGREEN + "Shit!", enemy.name, "just crashed the party...")
     print(bcolors.OKGREEN + "You are probably fucked but you have three options...")
