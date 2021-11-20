@@ -1,4 +1,5 @@
 import random
+import pyfiglet
 import sys
 from time import sleep
 
@@ -156,6 +157,8 @@ def loot_effect(lootDrop, character):
 
 def battle_state(character):
     enemy = enemy_select(Agent, Sentinel, Smith)
+    result = pyfiglet.figlet_format("F I G H T", font = "alligator" )
+    print(result)
     print(bcolors.OKGREEN + "Shit!", enemy.name, "just crashed the party...")
     print(bcolors.OKGREEN + "You are probably fucked but you have three options...")
     print(bcolors.OKGREEN + "Type either 1, 2 or 3 on your keyboard to make your selection")
