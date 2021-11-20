@@ -1,4 +1,6 @@
 import random
+import sys
+from time import sleep
 
 # class for green text
 class bcolors:
@@ -257,9 +259,18 @@ def battle_state(character):
 
 
 def main_storyline(score):
-    print(bcolors.OKGREEN + "Wake Up.\n")
-    print(bcolors.OKGREEN + "The Matrix has you.\n")
-    print(bcolors.OKGREEN + "Follow the white rabbit...\n")
+    line1 = "Wake Up.\n"
+    line2 = "The Matrix has you.\n"
+    line3 = "Follow the white rabbit...\n"
+    for char in line1:
+        sleep(0.1)
+        print(bcolors.OKGREEN + char, end='', flush=True)
+    for char in line2:
+        sleep(0.1)
+        print(bcolors.OKGREEN + char, end='', flush=True)
+    for char in line3:
+        sleep(0.1)
+        print(bcolors.OKGREEN + char, end='', flush=True)
     print(bcolors.OKGREEN + """
        /gg\           /gg\ 
       /g.gg\         /gg.g\ 

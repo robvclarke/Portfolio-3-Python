@@ -1,23 +1,7 @@
-class neo (object):
-    health = 25
-    strength = 5
-    defence = 10
-    agility = 1
-    score = 2
+import sys
+from time import sleep
 
-character = neo()
-
-def test(b):
-   b.health = 10
-
-test(character)
-
-print(character.health)
-#this is a primitive below
-
-def testprimitive(a):
-    a = 6
-
-primitive = 8
-testprimitive(primitive)
-print(primitive)
+words = "This is just a test :P"
+for char in words:
+    sleep(0.1)
+    print(char, end='', flush=True)
