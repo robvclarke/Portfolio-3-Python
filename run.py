@@ -4,6 +4,7 @@ import sys
 from time import sleep
 
 # class for green text
+
 class bcolors:
     OKGREEN = '\033[92m'
     HEADER = '\033[95m'
@@ -52,7 +53,6 @@ class Smith:
     strength = 4
     defence = 3
     loot = random.randint(0, 2)
-
 
 def game_over(character, full_health: bool = False):
 
