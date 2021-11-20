@@ -302,7 +302,6 @@ def choice1(score):
     answer = input(bcolors.OKGREEN + "Would you like to follow the white rabbit?(yes/no)\n").lower().strip()
     if answer.lower().strip() == "yes":
         battle_state(character)
-        exit()
   
     elif answer == "no":
         print(bcolors.OKGREEN + "that's too bad")
@@ -319,7 +318,6 @@ def choice2(score):
     answer = input(bcolors.OKGREEN + "Do you want to take the red pill or the blue pill?(red/blue)\n").lower().strip()
     if answer == "red":
         battle_state(character)
-        exit()
 
     elif answer == "blue":
         print(bcolors.OKGREEN + "You wake up the next day in your bed and remember nothing\n")
@@ -338,7 +336,6 @@ def choice3(score):
         print(bcolors.OKGREEN + "Good he is going to teach you loads of cool shit...")
         print(bcolors.OKGREEN + "But just as he is about to teach you how to jump over buildings...")
         battle_state(character)
-        exit()
 
     elif answer == "no":
         print(bcolors.OKGREEN + "He senses your distrust and removes your mouth\n")
@@ -364,11 +361,10 @@ def choice4(score):
     else:
         print(bcolors.OKGREEN + "Input Error please type either yes or no")
         choice3(score)
-
-score = 0   
+ 
 story_intro()
 character = hero_select()
-choice1(score)
-choice2(score)
-choice3(score)
-choice4(score)
+score = choice1(score)
+score = choice2(score)
+score = choice3(score)
+score = choice4(score)
