@@ -6,6 +6,8 @@ from time import sleep
 # class for green text
 class bcolors:
     OKGREEN = '\033[92m'
+    HEADER = '\033[95m'
+    CWHITE  = '\33[37m'
 
 # classes for characters you can choose to play as
 
@@ -92,14 +94,15 @@ def write_score(score):
     file.close()
 
 def hero_select():
-    print(bcolors.OKGREEN + "Who would you like to play as?")
+    print(bcolors.OKGREEN + "Who would you like to play as?\n")
     selection = input(bcolors.OKGREEN + "1. Neo \n2. Morpheus \n3. Trinity \n")
     if selection == "1":
         character = Neo
-        print(bcolors.OKGREEN + "You have selected Neo... These are his game stats...")
+        print(bcolors.OKGREEN + "You have selected Neo... These are his game stats...\n")
         print(bcolors.OKGREEN + "Health - ", character.health)
         print(bcolors.OKGREEN + "Strength - ", character.strength)
         print(bcolors.OKGREEN + "Defense - ", character.defence)
+        print("\n")
         return character
 
     elif selection == "2":
@@ -108,6 +111,7 @@ def hero_select():
         print(bcolors.OKGREEN + "Health - ", character.health)
         print(bcolors.OKGREEN + "Strength - ", character.strength)
         print(bcolors.OKGREEN + "Defense - ", character.defence)
+        print("\n")
         return character
 
     elif selection == "3":
@@ -116,10 +120,12 @@ def hero_select():
         print(bcolors.OKGREEN + "Health - ", character.health)
         print(bcolors.OKGREEN + "Strength - ", character.strength)
         print(bcolors.OKGREEN + "Defense - ", character.defence)
+        print("\n")
         return character
 
     else:
         print(bcolors.OKGREEN + "Input Error! Only press 1,2 or 3")
+        print("\n")
         hero_select()
 
 
@@ -161,7 +167,7 @@ def battle_state(character):
     print("\n")
     print(result)
     print(bcolors.OKGREEN + "Shit!", enemy.name, "just crashed the party...")
-    print(bcolors.OKGREEN + "You are probably fucked but you have three options...")
+    print(bcolors.OKGREEN + "You are probably fucked but you have three options...\n")
     print(bcolors.OKGREEN + "Type either 1, 2 or 3 on your keyboard to make your selection")
     while enemy.health > 0:
         choice = input(
@@ -201,7 +207,7 @@ def battle_state(character):
                     break
             else:
                 print(bcolors.OKGREEN + "You look class holding your gun sideways but sadly you miss", enemy.name)
-                print(bcolors.OKGREEN + "You have angered", enemy.name, "they attack viciously")
+                print(bcolors.OKGREEN + "You have angered", enemy.name, "they attack viciously\n")
                 character.health = character.health - enemy.strength
                 print(bcolors.OKGREEN + "Your health is now:", character.health)
                 game_over(character)
@@ -240,7 +246,7 @@ def battle_state(character):
                     break
             else:
                 print(bcolors.OKGREEN + "You slip on a banana skin and miss",enemy.name, "with your kick")
-                print(bcolors.OKGREEN + enemy.name, "is furious and attacks wildly")
+                print(bcolors.OKGREEN + enemy.name, "is furious and attacks wildly\n")
                 character.health = character.health - enemy.strength
                 print(bcolors.OKGREEN + "Your health is now:", character.health)
                 game_over(character)
@@ -259,7 +265,7 @@ def battle_state(character):
                 game_over(character)
 
         else:
-            print(bcolors.OKGREEN + "Input Error! You must only type the number 1,2 or 3 on the keyboard.")
+            print(bcolors.OKGREEN + "Input Error! You must only type the number 1,2 or 3 on the keyboard.\n")
 
 
 def main_storyline(score):
@@ -275,7 +281,7 @@ def main_storyline(score):
     for char in line3:
         sleep(0.1)
         print(bcolors.OKGREEN + char, end='', flush=True)
-    print(bcolors.OKGREEN + """
+    print(bcolors.CWHITE +"""
        /gg\           /gg\ 
       /g.gg\         /gg.g\ 
      |gg..gg\       /gg..gg| 
