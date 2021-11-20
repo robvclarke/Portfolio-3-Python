@@ -10,7 +10,7 @@ class bcolors:
 # classes for characters you can choose to play as
 
 
-class neo (object):
+class Neo:
     health = 30
     strength = 5
     defence = 10
@@ -18,7 +18,7 @@ class neo (object):
     
 
 
-class morpheus (object):
+class Morpheus:
     health = 28
     strength = 7
     defence = 7
@@ -26,7 +26,7 @@ class morpheus (object):
     
 
 
-class trinity (object):
+class Trinity:
     health = 26
     strength = 6
     defence = 8
@@ -35,7 +35,7 @@ class trinity (object):
 # classes for the enemies you will face
 
 
-class agent (object):
+class Agent:
     name = "Standard Agent"
     health = 20
     strength = 2
@@ -43,7 +43,7 @@ class agent (object):
     loot = random.randint(0, 2)
 
 
-class sentinel (object):
+class Sentinel:
     name = "Sentinel"
     health = 15
     strength = 3
@@ -51,7 +51,7 @@ class sentinel (object):
     loot = random.randint(0, 2)
 
 
-class smith (object):
+class Smith:
     name = "Agent Smith"
     health = 20
     strength = 4
@@ -104,7 +104,7 @@ def heroselect():
     print(bcolors.OKGREEN + "Who would you like to play as?")
     selection = input(bcolors.OKGREEN + "1. Neo \n2. Morpheus \n3. Trinity \n")
     if selection == "1":
-        character = neo
+        character = Neo
         print(bcolors.OKGREEN + "You have selected Neo... These are his game stats...")
         print(bcolors.OKGREEN + "Health - ", character.health)
         print(bcolors.OKGREEN + "Strength - ", character.strength)
@@ -112,7 +112,7 @@ def heroselect():
         return character
 
     elif selection == "2":
-        character = morpheus
+        character = Morpheus
         print(bcolors.OKGREEN + "You have selected Morpheus... These are his game stats...")
         print(bcolors.OKGREEN + "Health - ", character.health)
         print(bcolors.OKGREEN + "Strength - ", character.strength)
@@ -120,7 +120,7 @@ def heroselect():
         return character
 
     elif selection == "3":
-        character = trinity
+        character = Trinity
         print(bcolors.OKGREEN + "You have selected Trinity... These are her game stats...")
         print(bcolors.OKGREEN + "Health - ", character.health)
         print(bcolors.OKGREEN + "Strength - ", character.strength)
@@ -132,8 +132,8 @@ def heroselect():
         heroselect()
 
 
-def enemyselect(agent, sentinel, smith):
-    enemyList = [agent, sentinel, smith]
+def enemyselect(Agent, Sentinel, Smith):
+    enemyList = [Agent, Sentinel, Smith]
     chance = random.randint(0, 2)
     enemy = enemyList[chance]
     return enemy
@@ -167,7 +167,7 @@ def lootEffect(lootDrop, character):
 
 
 def battleState(character):
-    enemy = enemyselect(agent, sentinel, smith)
+    enemy = enemyselect(Agent, Sentinel, Smith)
     print(bcolors.OKGREEN + "Shit!", enemy.name, "just crashed the party...")
     print(bcolors.OKGREEN + "You are probably fucked but you have three options...")
     print(bcolors.OKGREEN + "Type either 1, 2 or 3 on your keyboard to make your selection")
