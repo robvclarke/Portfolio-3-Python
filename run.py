@@ -85,7 +85,7 @@ def write_score(score):
     Function for writing the users final score to the .txt file
     """
     name = input("Type your name to add it to the high score list...")
-    print("High Scores")
+    print("HIGH SCORES")
     file = open("score.txt", "a")
     file.write(str(name))
     file.write(",")
