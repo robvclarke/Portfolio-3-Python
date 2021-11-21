@@ -14,21 +14,18 @@ class bcolors:
 
 
 class Neo:
-    health = 30
-    strength = 5
-    defence = 10
+    health = 40
+    strength = 11
     score = 0
     
 class Morpheus:
-    health = 28
-    strength = 7
-    defence = 7
+    health = 36
+    strength = 9
     score = 0
     
 class Trinity:
-    health = 26
-    strength = 6
-    defence = 8
+    health = 37
+    strength = 7
     score = 0
 
 # classes for the enemies you will face
@@ -36,22 +33,19 @@ class Trinity:
 class Agent:
     name = "Standard Agent"
     health = 20
-    strength = 2
-    defence = 2
+    strength = 5
     loot = random.randint(0, 2)
 
 class Sentinel:
     name = "Sentinel"
     health = 15
-    strength = 3
-    defence = 3
+    strength = 4
     loot = random.randint(0, 2)
 
 class Smith:
     name = "Agent Smith"
     health = 20
-    strength = 4
-    defence = 3
+    strength = 6
     loot = random.randint(0, 2)
 
 def game_over(character, full_health: bool = False):
@@ -102,7 +96,6 @@ def hero_select():
         print(bcolors.OKGREEN + "You have selected Neo... These are his game stats...\n")
         print(bcolors.OKGREEN + "Health - ", character.health)
         print(bcolors.OKGREEN + "Strength - ", character.strength)
-        print(bcolors.OKGREEN + "Defense - ", character.defence)
         print("\n")
         return character
 
@@ -111,7 +104,6 @@ def hero_select():
         print(bcolors.OKGREEN + "You have selected Morpheus... These are his game stats...")
         print(bcolors.OKGREEN + "Health - ", character.health)
         print(bcolors.OKGREEN + "Strength - ", character.strength)
-        print(bcolors.OKGREEN + "Defense - ", character.defence)
         print("\n")
         return character
 
@@ -120,7 +112,6 @@ def hero_select():
         print(bcolors.OKGREEN + "You have selected Trinity... These are her game stats...")
         print(bcolors.OKGREEN + "Health - ", character.health)
         print(bcolors.OKGREEN + "Strength - ", character.strength)
-        print(bcolors.OKGREEN + "Defense - ", character.defence)
         print("\n")
         return character
 
@@ -146,14 +137,14 @@ def loot():
 def loot_effect(lootDrop, character):
     if lootDrop == "Uzi":
         character.strength = character.strength + 5
-        print(bcolors.OKGREEN + "You cock the Uzi and put it in your jacket! Increasing your health by 5")
+        print(bcolors.OKGREEN + "You cock the Uzi and put it in your jacket! Increasing your strength by 5")
         print(bcolors.OKGREEN + "Your strength is now", character.strength)
         return character
 
     elif lootDrop == "Leather Jacket":
-        character.defence = character.defence + 10
-        print(bcolors.OKGREEN + "You put on the leather jacket! Increasing your defense by 10")
-        print(bcolors.OKGREEN + "Your defense is now", character.defence)
+        character.strength = character.strength + 10
+        print(bcolors.OKGREEN + "You put on the leather jacket! Increasing your strength by 10")
+        print(bcolors.OKGREEN + "Your strength is now", character.strength)
         return character
 
     elif lootDrop == "Katana":
@@ -299,7 +290,7 @@ def story_intro():
          \ggggggggggggg/
         """)
 
-def choice1(score, character):
+def choice1(character):
     answer = input(bcolors.OKGREEN + "Would you like to follow the white rabbit?(yes/no)\n").lower().strip()
     if answer.lower().strip() == "yes":
         battle_state(character)
@@ -313,7 +304,7 @@ def choice1(score, character):
         choice1(score, character)
 
 
-def choice2(score, character):
+def choice2(character):
     print(bcolors.OKGREEN + "You arrive in a strange techno club where they are playing Rob Zombie...\n")
     print(bcolors.OKGREEN + "A man you have never met wearing sunglasses invites you to sit down...\n")
     answer = input(bcolors.OKGREEN + "Do you want to take the red pill or the blue pill?(red/blue)\n").lower().strip()
@@ -328,7 +319,7 @@ def choice2(score, character):
         print(bcolors.OKGREEN + "invalid choice, type either red or blue")
         choice2(score, character)
 
-def choice3(score, character):
+def choice3(character):
     print(bcolors.OKGREEN + "The man explains to you that reality is a construct...\n")
     print(bcolors.OKGREEN + "He explains that you are potentially a saviour to all mankind...\n")
     answer = input("Do you trust him? (yes/no)\n").lower().strip()
@@ -347,7 +338,7 @@ def choice3(score, character):
         print(bcolors.OKGREEN + "Input Error please type either yes or no")
         choice3(score, character)
     
-def choice4(score, character):
+def choice4(character):
     answer = input(bcolors.OKGREEN + "A woman called the Oracle asks you if you want to risk all for love? (yes/no)\n").lower().strip()
     if answer == "yes":
         print(bcolors.OKGREEN + "She smiles\n")
@@ -363,10 +354,10 @@ def choice4(score, character):
         print(bcolors.OKGREEN + "Input Error please type either yes or no")
         choice4(score, character)
 
-score = 0   
+ 
 story_intro()
 character = hero_select()
-score = choice1(score, character)
-score = choice2(score, character)
-score = choice3(score, character)
-score = choice4(score, character)
+choice1(character)
+choice2(character)
+choice3(character)
+choice4(character)
