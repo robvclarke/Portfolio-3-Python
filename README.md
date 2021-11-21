@@ -1,4 +1,4 @@
-#Enter the Matrix - Choose your own adventure game
+# Enter the Matrix - Choose your own adventure game
 
 ![Am I responsive](/assets/images/project_image.png)
 
@@ -6,7 +6,7 @@
 
 A choose your own adventure game based on the sci-fi classic the matrix. 
 
-##Project Inspiration
+## Project Inspiration
 
 For a lot of people of my generation, when we think of a computer terminal it is synonymous with the classic opening scene of the film 'The Matrix' with the classic lines:
 
@@ -22,16 +22,16 @@ Appearing on the screen as the main character Neo's computer is hacked.
 
 I decided I wanted to make a choose your own adventure game based on this classic scene and some other seminal scenes from the film as I felt it was a cool theme to explore and a fun way to try put my python skills to the test.
 
-##UX
+## UX
 
-###Site Owners Goals
+### Site Owners Goals
 
 The objectives of the site owner are: 
 1. To create an intuitive, command line programme, that sticks to good UX Principles while being a fun game to play. 
 2. To create a programme that shows off the python skills I have learned in this course. 
 3. To create a choose your own adventure game with input validation, multiple choice and randomly generated enemies, rewards and fights.
 
-###User Needs
+### User Needs
 
 1. To have their curiosity picked by the opening Alice in Wonderland style call to action
 2. To find the programme easy to play
