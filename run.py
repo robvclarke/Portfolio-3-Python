@@ -65,7 +65,8 @@ def game_over(character, full_health: bool = False):
 
         for line in file:
             xline = line.split(",")
-            print(xline[0], xline[1])
+            if len(xline) > 1:
+                print(xline[0], xline[1])
 
         exit()
 
@@ -76,10 +77,10 @@ def game_over(character, full_health: bool = False):
         write_score(character.score)
 
         file = open("score.txt", "r")
-
         for line in file:
             xline = line.split(",")
-            print(xline[0], xline[1])
+            if len(xline) > 1:
+                print(xline[0], xline[1])
 
         exit()
 
@@ -267,8 +268,7 @@ def battle_state(character):
         else:
             print(bcolors.OKGREEN + "Input Error! You must only type the number 1,2 or 3 on the keyboard.\n")
 
-
-def main_storyline(score):
+def story_intro():
     line1 = "Wake Up.\n"
     line2 = "The Matrix has you.\n"
     line3 = "Follow the white rabbit...\n"
@@ -298,48 +298,75 @@ def main_storyline(score):
       \gcccggg\---/gggcccg/ 
          \ggggggggggggg/
         """)
-    character = hero_select()
+
+def choice1(score, character):
     answer = input(bcolors.OKGREEN + "Would you like to follow the white rabbit?(yes/no)\n").lower().strip()
     if answer.lower().strip() == "yes":
         battle_state(character)
-        print(bcolors.OKGREEN + "You arrive in a strange techno club where they are playing Rob Zombie...\n")
-        print(bcolors.OKGREEN + "A man you have never met wearing sunglasses invites you to sit down...\n")
-        answer = input(bcolors.OKGREEN + "Do you want to take the red pill or the blue pill?(red/blue)\n").lower().strip()
-        if answer == "red":
-            print(bcolors.OKGREEN + "The man explains to you that reality is a construct...\n")
-            print(bcolors.OKGREEN + "He explains that you are potentially a saviour to all mankind...\n")
-            answer = input("Do you trust him? (yes/no)\n").lower().strip()
-
-            if answer == "no":
-                print(bcolors.OKGREEN + "He senses your distrust and removes your mouth\n")
-                print(bcolors.OKGREEN + "He then shoots you in the head\n")
-                game_over(character, True)
-
-            else:
-                print(bcolors.OKGREEN + "Good he is going to teach you loads of cool shit...")
-                print(bcolors.OKGREEN + "But just as he is about to teach you how to jump over buildings...")
-                battle_state(character)
-                answer = input(bcolors.OKGREEN + "A woman called the Oracle asks you if you want to risk all for love? (yes/no)\n").lower().strip()
-                if answer == "yes":
-                    print(bcolors.OKGREEN + "She smiles\n")
-                    print(bcolors.OKGREEN + "You brought peace between Man and Machine. You won the game you legend!")
-                    game_over(character, True)
-
-                else:
-                    print(bcolors.OKGREEN + "The oracle thinks you are a prude...\n")
-                    print(bcolors.OKGREEN + "She stabs you with a bent spoon...\n")
-                    game_over(character, True)
-
-        elif answer == "blue":
-            print(bcolors.OKGREEN + "You wake up the next day in your bed and remember nothing\n")
-            game_over(character, True)
-
-        else:
-            print(bcolors.OKGREEN + "invalid choice, type one of the options in brackets in the statement above ")
-
-    else:
+  
+    elif answer == "no":
         print(bcolors.OKGREEN + "that's too bad")
         game_over(character, True)
+    
+    else: 
+        print(bcolors.OKGREEN + "Input Error please type either yes or no")
+        choice1(score, character)
 
-score = 0
-score = main_storyline(score)
+
+def choice2(score, character):
+    print(bcolors.OKGREEN + "You arrive in a strange techno club where they are playing Rob Zombie...\n")
+    print(bcolors.OKGREEN + "A man you have never met wearing sunglasses invites you to sit down...\n")
+    answer = input(bcolors.OKGREEN + "Do you want to take the red pill or the blue pill?(red/blue)\n").lower().strip()
+    if answer == "red":
+        battle_state(character)
+
+    elif answer == "blue":
+        print(bcolors.OKGREEN + "You wake up the next day in your bed and remember nothing\n")
+        game_over(character, True)
+
+    else:
+        print(bcolors.OKGREEN + "invalid choice, type either red or blue")
+        choice2(score, character)
+
+def choice3(score, character):
+    print(bcolors.OKGREEN + "The man explains to you that reality is a construct...\n")
+    print(bcolors.OKGREEN + "He explains that you are potentially a saviour to all mankind...\n")
+    answer = input("Do you trust him? (yes/no)\n").lower().strip()
+
+    if answer == "yes":
+        print(bcolors.OKGREEN + "Good he is going to teach you loads of cool shit...")
+        print(bcolors.OKGREEN + "But just as he is about to teach you how to jump over buildings...")
+        battle_state(character)
+
+    elif answer == "no":
+        print(bcolors.OKGREEN + "He senses your distrust and removes your mouth\n")
+        print(bcolors.OKGREEN + "He then shoots you in the head\n")
+        game_over(character, True)
+
+    else:
+        print(bcolors.OKGREEN + "Input Error please type either yes or no")
+        choice3(score, character)
+    
+def choice4(score, character):
+    answer = input(bcolors.OKGREEN + "A woman called the Oracle asks you if you want to risk all for love? (yes/no)\n").lower().strip()
+    if answer == "yes":
+        print(bcolors.OKGREEN + "She smiles\n")
+        print(bcolors.OKGREEN + "You brought peace between Man and Machine. You won the game you legend!")
+        game_over(character, True)
+
+    elif answer == "no":
+        print(bcolors.OKGREEN + "The oracle thinks you are a prude...\n")
+        print(bcolors.OKGREEN + "She stabs you with a bent spoon...\n")
+        game_over(character, True)
+    
+    else:
+        print(bcolors.OKGREEN + "Input Error please type either yes or no")
+        choice4(score, character)
+
+score = 0   
+story_intro()
+character = hero_select()
+score = choice1(score, character)
+score = choice2(score, character)
+score = choice3(score, character)
+score = choice4(score, character)
