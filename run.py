@@ -54,7 +54,10 @@ def game_over(character, full_health: bool = False):
     Either via dying by having health > 1 or if they make a wrong decision
     """
     if full_health:
-        print(bcolors.OKGREEN + "Game Over")
+        print(bcolors.CWHITE + "") #this empty string is to change the colour of the figlet text
+        gameover = pyfiglet.figlet_format("G A M E _ O V E R", font = "alphabet")
+        print("\n")
+        print(gameover)
         print(bcolors.OKGREEN + "Your final score is", character.score)
         write_score(character.score)
 
@@ -69,7 +72,10 @@ def game_over(character, full_health: bool = False):
 
     if character.health < 1:
         print(bcolors.OKGREEN + "You are out of health and about to be made slave concubine to the Deus Ex Machina for the remainder of your days\n")
-        print(bcolors.OKGREEN + "Game Over")
+        print(bcolors.CWHITE + "") #this empty string is to change the colour of the figlet text
+        gameover = pyfiglet.figlet_format("G A M E _ O V E R", font = "alphabet")
+        print("\n")
+        print(gameover)
         print(bcolors.OKGREEN + "Your final score is", character.score)
         write_score(character.score)
 
@@ -181,9 +187,11 @@ def battle_state(character):
     Input validation if present if the user doesnt push either 1,2 or 3
     """
     enemy = enemy_select(Agent, Sentinel, Smith)
+    print(bcolors.CWHITE + "") #this empty string is to change the colour of the figlet text
     result = pyfiglet.figlet_format("F I G H T - M O D E", font = "alphabet")
     print("\n")
     print(result)
+    print(bcolors.OKGREEN + "")
     print(bcolors.OKGREEN + "Shit!", enemy.name, "just crashed the party...")
     print(bcolors.OKGREEN + "You are probably fucked but you have three options...\n")
     print(bcolors.OKGREEN + "Type either 1, 2 or 3 on your keyboard to make your selection")
