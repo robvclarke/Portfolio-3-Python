@@ -12,7 +12,6 @@ class bcolors:
 
 # classes for characters you can choose to play as
 
-
 class Neo:
     health = 40
     strength = 11
@@ -47,8 +46,6 @@ class Smith:
     health = 20
     strength = 6
     loot = random.randint(0, 2)
-
-
 
 def game_over(character, full_health: bool = False):
     """
@@ -132,7 +129,6 @@ def hero_select():
         print("\n")
         hero_select()
 
-
 def enemy_select(Agent, Sentinel, Smith):
     """
     Function for randomly selecting the enemy you will face when a battle occurs
@@ -141,7 +137,6 @@ def enemy_select(Agent, Sentinel, Smith):
     chance = random.randint(0, 2)
     enemy = enemyList[chance]
     return enemy
-
 
 def loot():
     """
@@ -335,8 +330,7 @@ def choice1(character):
     
     else: 
         print(bcolors.OKGREEN + "Input Error please type either yes or no")
-        choice1(score, character)
-
+        choice1(character)
 
 def choice2(character):
     """
@@ -354,7 +348,7 @@ def choice2(character):
 
     else:
         print(bcolors.OKGREEN + "invalid choice, type either red or blue")
-        choice2(score, character)
+        choice2(character)
 
 def choice3(character):
     """
@@ -376,7 +370,7 @@ def choice3(character):
 
     else:
         print(bcolors.OKGREEN + "Input Error please type either yes or no")
-        choice3(score, character)
+        choice3(character)
     
 def choice4(character):
     """
@@ -395,9 +389,8 @@ def choice4(character):
     
     else:
         print(bcolors.OKGREEN + "Input Error please type either yes or no")
-        choice4(score, character)
+        choice4(character)
 
- 
 story_intro()
 character = hero_select()
 choice1(character)
