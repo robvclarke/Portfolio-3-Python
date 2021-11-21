@@ -48,8 +48,13 @@ class Smith:
     strength = 6
     loot = random.randint(0, 2)
 
-def game_over(character, full_health: bool = False):
 
+
+def game_over(character, full_health: bool = False):
+    """
+    Function for when user gets a gameover.
+    Either via dying by having health > 1 or if they make a wrong decision
+    """
     if full_health:
         print(bcolors.OKGREEN + "Game Over")
         print(bcolors.OKGREEN + "Your final score is", character.score)
@@ -79,7 +84,11 @@ def game_over(character, full_health: bool = False):
         exit()
 
 def write_score(score):
-    name = input("Add your name to your score...")
+    """
+    Function for writing the users final score to the .txt file
+    """
+    name = input("Type your name to add it to the high score list...")
+    print("High Scores")
     file = open("score.txt", "a")
     file.write(str(name))
     file.write(",")
@@ -89,6 +98,9 @@ def write_score(score):
     file.close()
 
 def hero_select():
+    """
+    Function for choosing the hero character you wish to play as
+    """
     print(bcolors.OKGREEN + "Who would you like to play as?\n")
     selection = input(bcolors.OKGREEN + "1. Neo \n2. Morpheus \n3. Trinity \n")
     if selection == "1":
@@ -122,6 +134,9 @@ def hero_select():
 
 
 def enemy_select(Agent, Sentinel, Smith):
+    """
+    Function for randomly selecting the enemy you will face when a battle occurs
+    """
     enemyList = [Agent, Sentinel, Smith]
     chance = random.randint(0, 2)
     enemy = enemyList[chance]
@@ -129,12 +144,18 @@ def enemy_select(Agent, Sentinel, Smith):
 
 
 def loot():
+    """
+    Function for randomly selecting the loot the enemy will drop after you fight it
+    """
     loot = ["Uzi", "Leather Jacket", "Katana"]
     lootChance = random.randint(0, 2)
     lootDrop = loot[lootChance]
     return lootDrop
 
 def loot_effect(lootDrop, character):
+    """
+    Function to for the loot you get adding to your characters strength attribute
+    """
     if lootDrop == "Uzi":
         character.strength = character.strength + 5
         print(bcolors.OKGREEN + "You cock the Uzi and put it in your jacket! Increasing your strength by 5")
@@ -154,6 +175,13 @@ def loot_effect(lootDrop, character):
         return character
 
 def battle_state(character):
+    """
+    Function for the fight sequences
+    Random enemy is generated
+    You have three options for how to behave
+    These have a hitchance that is randomly generated to keep the fights interesting
+    Input validation if present if the user doesnt push either 1,2 or 3
+    """
     enemy = enemy_select(Agent, Sentinel, Smith)
     result = pyfiglet.figlet_format("F I G H T - M O D E", font = "alphabet")
     print("\n")
@@ -260,6 +288,9 @@ def battle_state(character):
             print(bcolors.OKGREEN + "Input Error! You must only type the number 1,2 or 3 on the keyboard.\n")
 
 def story_intro():
+    """
+    Function for the intro to the game with type delay and ascii art
+    """
     line1 = "Wake Up.\n"
     line2 = "The Matrix has you.\n"
     line3 = "Follow the white rabbit...\n"
@@ -291,6 +322,9 @@ def story_intro():
         """)
 
 def choice1(character):
+    """
+    The first decision point of this choose your own adventure game with input validation
+    """
     answer = input(bcolors.OKGREEN + "Would you like to follow the white rabbit?(yes/no)\n").lower().strip()
     if answer.lower().strip() == "yes":
         battle_state(character)
@@ -305,6 +339,9 @@ def choice1(character):
 
 
 def choice2(character):
+    """
+    The second decision point of this choose your own adventure game with input validation
+    """
     print(bcolors.OKGREEN + "You arrive in a strange techno club where they are playing Rob Zombie...\n")
     print(bcolors.OKGREEN + "A man you have never met wearing sunglasses invites you to sit down...\n")
     answer = input(bcolors.OKGREEN + "Do you want to take the red pill or the blue pill?(red/blue)\n").lower().strip()
@@ -320,6 +357,9 @@ def choice2(character):
         choice2(score, character)
 
 def choice3(character):
+    """
+    The third decision point of this choose your own adventure game with input validation
+    """
     print(bcolors.OKGREEN + "The man explains to you that reality is a construct...\n")
     print(bcolors.OKGREEN + "He explains that you are potentially a saviour to all mankind...\n")
     answer = input("Do you trust him? (yes/no)\n").lower().strip()
@@ -339,6 +379,9 @@ def choice3(character):
         choice3(score, character)
     
 def choice4(character):
+    """
+    The fourth decision point of this choose your own adventure game with input validation
+    """
     answer = input(bcolors.OKGREEN + "A woman called the Oracle asks you if you want to risk all for love? (yes/no)\n").lower().strip()
     if answer == "yes":
         print(bcolors.OKGREEN + "She smiles\n")
