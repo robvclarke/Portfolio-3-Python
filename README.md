@@ -1,31 +1,40 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+#Enter the Matrix - Choose your own adventure game
 
-Welcome robvclarke,
+![Am I responsive](/assets/images/project_image.png)
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+[Link to live website](https://enter-the-matrix.herokuapp.com/)
 
-## Reminders
+A choose your own adventure game based on the sci-fi classic the matrix. 
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+##Project Inspiration
 
-## Creating the Heroku app
+For a lot of people of my generation, when we think of a computer terminal it is synonymous with the classic opening scene of the film 'The Matrix' with the classic lines:
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+Wake up, Neo...
+The Matrix has you...
+Follow the white rabbit..
 
-1. `heroku/python`
-2. `heroku/nodejs`
+Appearing on the screen as the main character Neo's computer is hacked.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+![Scene from the matrix](/assets/images/follow_the_white_rabbit.png)
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+[Watch the White Rabbit Scene in the Matrix on Youtube](https://www.youtube.com/watch?v=6IDT3MpSCKI&ab_channel=TheMatrixFan314)
 
-Connect your GitHub repository and deploy as normal.
+I decided I wanted to make a choose your own adventure game based on this classic scene and some other seminal scenes from the film as I felt it was a cool theme to explore and a fun way to try put my python skills to the test.
 
-## Constraints
+##UX
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+###Site Owners Goals
 
------
-Happy coding!
+The objectives of the site owner are: 
+1. To create an intuitive, command line programme, that sticks to good UX Principles while being a fun game to play. 
+2. To create a programme that shows off the python skills I have learned in this course. 
+3. To create a choose your own adventure game with input validation, multiple choice and randomly generated enemies, rewards and fights.
+
+###User Needs
+
+1. To have their curiosity picked by the opening Alice in Wonderland style call to action
+2. To find the programme easy to play
+3. To find the choices they take interesting and reward their knowledge of the Matrix film. 
+4. To play a game with a variety of decision points, enemies and rewards so it has replayability.
+5. To be able to log their final score and see the HIGH SCORE list of other players.
