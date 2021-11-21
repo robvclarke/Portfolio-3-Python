@@ -9,6 +9,7 @@ class bcolors:
     OKGREEN = '\033[92m'
     HEADER = '\033[95m'
     CWHITE  = '\33[37m'
+    CRED    = '\33[31m'
 
 # classes for characters you can choose to play as
 
@@ -127,7 +128,7 @@ def hero_select():
         return character
 
     else:
-        print(bcolors.OKGREEN + "Input Error! Only press 1,2 or 3")
+        print(bcolors.CRED + "Input Error! Only press 1,2 or 3")
         print("\n")
         hero_select()
 
@@ -282,7 +283,7 @@ def battle_state(character):
                 game_over(character)
 
         else:
-            print(bcolors.OKGREEN + "Input Error! You must only type the number 1,2 or 3 on the keyboard.\n")
+            print(bcolors.CRED + "Input Error! You must only type the number 1,2 or 3 on the keyboard.\n")
 
 def story_intro():
     """
@@ -331,7 +332,7 @@ def choice1(character):
         game_over(character, True)
     
     else: 
-        print(bcolors.OKGREEN + "Input Error please type either yes or no")
+        print(bcolors.CRED + "Input Error please type either yes or no")
         choice1(character)
 
 def choice2(character):
@@ -349,7 +350,7 @@ def choice2(character):
         game_over(character, True)
 
     else:
-        print(bcolors.OKGREEN + "invalid choice, type either red or blue")
+        print(bcolors.CRED + "invalid choice, type either red or blue")
         choice2(character)
 
 def choice3(character):
@@ -371,7 +372,7 @@ def choice3(character):
         game_over(character, True)
 
     else:
-        print(bcolors.OKGREEN + "Input Error please type either yes or no")
+        print(bcolors.CRED + "Input Error please type either yes or no")
         choice3(character)
     
 def choice4(character):
@@ -390,7 +391,7 @@ def choice4(character):
         game_over(character, True)
     
     else:
-        print(bcolors.OKGREEN + "Input Error please type either yes or no")
+        print(bcolors.CRED + "Input Error please type either yes or no")
         choice4(character)
 
 story_intro()

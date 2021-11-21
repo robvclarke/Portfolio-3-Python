@@ -38,3 +38,6 @@ The objectives of the site owner are:
 3. To find the choices they take interesting and reward their knowledge of the Matrix film. 
 4. To play a game with a variety of decision points, enemies and rewards so it has replayability.
 5. To be able to log their final score and see the HIGH SCORE list of other players.
+
+## Features
+
