@@ -7,7 +7,7 @@ from time import sleep
 
 
 class bcolors:
-    OKGREEN = '\033[92m'
+    OKGREEN = '\u001b[32;1m'
     HEADER = '\033[95m'
     CWHITE = '\33[37m'
     CRED = '\33[31m'
