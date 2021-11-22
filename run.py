@@ -270,17 +270,17 @@ def battle_state(character):
                         character.score = character.score + 13
 
                     print(bcolors.OKGREEN + "You kicked the shit out of",
-                          enemy.name, "they are very dead... for now")
+                          enemy.name, "they are very dead... for now\n")
                     print(bcolors.OKGREEN + "But wait!",
-                          enemy.name, "dropped something of value")
+                          enemy.name, "dropped something of value\n")
                     lootDrop = loot()
-                    print("You just got a", lootDrop)
+                    print("You just got a", lootDrop, + "\n")
                     loot_effect(lootDrop, character)
                     return character.score
                     break
             else:
                 print(
-                    bcolors.OKGREEN + "You look class"
+                    bcolors.OKGREEN + "You look class "
                     "holding your gun sideways but"
                     "sadly you miss", enemy.name)
                 print(bcolors.OKGREEN + "You have angered",
