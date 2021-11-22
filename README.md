@@ -77,12 +77,13 @@ The objectives of the site owner are:
 
 ![Error Validation](/assets/images/error_validation.png)
 
-4. Choice 1 
+4. Choice Sections 
 
 - The first decision point you reach in the game is the same decision Neo has to make in the film 'Do you want to follow the white rabbit?' 
 - If you select 'yes' the battle_state() function is triggered and you will fight your first enemy. 
 - If you select 'no' the gameover() function is called and you will have a score of '0' which the user can choose to write to the highscore list in the .txt file via the writescore() function within the gameover() function.
 - If you type anything other than yes or no their is input validation asking you to type either yes or no and reprompting you to make your decision. 
+- The other four choices that occur in the game are structured the same except the final 'choice4' does not trigger a fight mode which is shown in the flow diagram above.
 
 ![choice1](/assets/images/choice1.png)
 
@@ -106,9 +107,21 @@ Each time you connect you take health off the enemy and then he retaliates takin
 
 6. Loot items
 
-- Each enemy carries a loot of either an uzi, a leather jacket or a katana which each increase your characters strength by various amounts. Which loot they carry is selected using the random module and after you defeat them they drop it via the lootDrop() function called at the end of battlestate.
+- Each enemy carries a loot of either an uzi, a leather jacket or a katana. Each increase your characters strength by different amounts. Which loot they carry is selected using the random module and after you defeat them they drop it via the lootDrop() function called at the end of battlestate.
 
-![Loot Drop](/assets/images/fight_mode_two.png)
+![Loot Drop](/assets/images/loot_feature.png)
+
+7. Game Over
+
+- When a users health goes to zero the gameover function declares that it is gameover with a figlet text banner. The users final score is printed to the screen.
+
+- A game over can also be triggered if the user has made an incorrect decision at a choice point and this is differentiated in my code through the use of a boolean to account for when the users health is not 0 as in the case of a wrong decision. 
+
+![Gameover](/assets/images/game_over.png)
+
+8. Writing your score/viewing high scores
+
+- 
 
 
 ## Testing
@@ -118,7 +131,7 @@ After correcting lines that were too long and some indentations/white space afte
 ![Pep8](/assets/images/pep8_testing.png)
 
 The text colors I chose based the lighthouse test for accessibility with an overall score of 98 
-![Lighthouse](/assets/images/loot_feature.png)
+![Lighthouse](/assets/images/lighthouse.png)
 
 ## Credits
 
