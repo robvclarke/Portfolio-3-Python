@@ -126,6 +126,20 @@ Each time you connect you take health off the enemy and then he retaliates takin
 
 ![Gameover](/assets/images/write_score.png)
 
+## Technolgies
+
+Key technologies used to create this game are shown below:
+
+- [Python 3](https://www.python.org/downloads/) used to programme the game
+- [Gitpod](https://gitpod.io/) used for version control and coding the project
+- [Heroku](https://www.heroku.com) used to deploy the application
+- [Github](https://github.com)Github used to host the repository
+- Figma was used to create the flowchart in the readme
+- The template provided by the code institute 'Python Essentials Template' was used to display the terminal on the webpage via Heroku
+- Random module was used to create randomly selected enemies, loot and success in the fight mode
+- Time Module was used to create the typing effect in the intro
+- Figlet used to create the text banners
+
 ## Testing
 ### PEP8 Online Code Checker
 
