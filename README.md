@@ -68,7 +68,7 @@ The objectives of the site owner are:
 ## Testing
 ### PEP8 Online Code Checker
 
-After correctly mainly lines that were too long and some indentations after text the code in my run.py file passed the Pep8 online code checker with no errors
+After correcting lines that were too long and some indentations/white space after text the code in my run.py file passed the Pep8 online code checker with no errors
 ![Pep8](/assets/images/pep8_testing.png)
 
 ## Credits
