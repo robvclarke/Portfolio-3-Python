@@ -102,6 +102,14 @@ Each time you connect you take health off the enemy and then he retaliates takin
 
 ![Fight Mode 2](/assets/images/fight_mode_two.png)
 
+- depending on which enemy you have defeated your characters score increases appropriatley which will then be printed out to you at the end of the game where you can add it to the high score list 
+
+6. Loot items
+
+- Each enemy carries a loot of either an uzi, a leather jacket or a katana which each increase your characters strength by various amounts. Which loot they carry is selected using the random module and after you defeat them they drop it via the lootDrop() function called at the end of battlestate.
+
+![Loot Drop](/assets/images/fight_mode_two.png)
+
 
 ## Testing
 ### PEP8 Online Code Checker
