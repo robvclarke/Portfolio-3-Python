@@ -65,11 +65,38 @@ The objectives of the site owner are:
 
 ![Intro Section](/assets/images/intro_section.png)
 
+3. Selecting your Character
+
+- You have three options for the character you wish to play the game. They are the main characters from the film. Neo, Morpheus and Trinity. Each have their own stats for health/strength which effect your ability to fight the enemies you will encounter in the game. Each character starts off with a score of zero. 
+
+- These attributes are printed out once you make your selection.
+
+![Selecting your Character](/assets/images/character_select.png)
+
+- the user makes their selection by typing either 1,2 or 3 in on their keyboard. If they type anything else input validation throws up an error message in red and reprompts them to enter a valid choice.
+
+![Error Validation](/assets/images/error_validation.png)
+
+4. Choice 1 
+
+- The first decision point you reach in the game is the same decision Neo has to make in the film 'Do you want to follow the white rabbit?' 
+- If you select 'yes' the battle_state() function is triggered and you will fight your first enemy. 
+- If you select 'no' the gameover() function is called and you will have a score of '0' which the user can choose to write to the highscore list in the .txt file via the writescore() function within the gameover() function.
+- If you type anything other than yes or no their is input validation asking you to type either yes or no and reprompting you to make your decision. 
+
+![choice1](/assets/images/error_validation.png)
+
+
+
+
 ## Testing
 ### PEP8 Online Code Checker
 
 After correcting lines that were too long and some indentations/white space after text the code in my run.py file passed the Pep8 online code checker with no errors
 ![Pep8](/assets/images/pep8_testing.png)
+
+The text colors I chose based the lighthouse test for accessibility with an overall score of 98 
+![Lighthouse](/assets/images/lighthouse.png)
 
 ## Credits
 
@@ -90,6 +117,10 @@ After correcting lines that were too long and some indentations/white space afte
 - When I was first trying to get my head around how I might make this game this video was helpful [Youtube Tutorial](https://www.youtube.com/watch?v=DEcFCn2ubSg&t=2s&ab_channel=TechWithTim)
 
 - This series of youtube tutorials provided a good base which I was able to build on when creating my game [Youtube Tutorial](https://www.youtube.com/playlist?list=PLJPiff845eg8hBMJNo6Y2Yo7LKAB8oedh)
+
+- The ASCII art of the white rabbit in the intro section is by Susie Oviatt [Ascii Art](https://www.asciiart.eu/animals/rabbits)
+
+- The Fight-Mode and Game-Over text banners were created using Figlet [Figlet](https://en.wikipedia.org/wiki/FIGlet)
 
 - My mentor Reuben Ferrante for his guidance throughout the project
 
