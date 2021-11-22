@@ -71,4 +71,16 @@ The objectives of the site owner are:
 After correctly mainly lines that were too long and some indentations after text the code in my run.py file passed the Pep8 online code checker with no errors
 ![Pep8](/assets/images/pep8_testing.png)
 
-Test push
+## Credits
+
+- Code institute gave us the python essentials template which got the terminal into the browser for this project
+
+- Heroku for providing the deployment site
+
+- When I was first trying to get my head around how I might make this game this video was helpful [Youtube Tutorial](https://www.youtube.com/watch?v=DEcFCn2ubSg&t=2s&ab_channel=TechWithTim)
+
+- This series of youtube tutorials provided a good base which I was able to build on when creating my game [Youtube Tutorial](https://www.youtube.com/playlist?list=PLJPiff845eg8hBMJNo6Y2Yo7LKAB8oedh)
+
+- My mentor Reuben Ferrante for his guidance throughout the project
+
+ 
