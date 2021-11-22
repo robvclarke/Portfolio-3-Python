@@ -189,26 +189,31 @@ def loot_effect(lootDrop, character):
     if lootDrop == "Uzi":
         character.strength = character.strength + 5
         print(bcolors.OKGREEN +
-              "You cock the Uzi and put"
-              "it in your jacket! Increasing"
+              "You cock the Uzi and put "
+              "it in your jacket! Increasing "
               "your strength by 5")
-        print(bcolors.OKGREEN + "Your strength is now", character.strength)
+        print(bcolors.OKGREEN + "Your strength is now",
+              character.strength, "\n")
         return character
 
     elif lootDrop == "Leather Jacket":
         character.strength = character.strength + 10
         print(bcolors.OKGREEN +
               "You put on the leather jacket! Increasing your strength by 10")
-        print(bcolors.OKGREEN + "Your strength is now", character.strength)
+        print(bcolors.OKGREEN +
+              "Your strength is now",
+              character.strength, "\n")
         return character
 
     elif lootDrop == "Katana":
         character.strength = character.strength + 8
         print(bcolors.OKGREEN +
-              "You sheath the katana and strap"
-              "it to your back!"
+              "You sheath the katana and strap "
+              "it to your back! "
               "Increasing your strength by 8")
-        print(bcolors.OKGREEN + "Your strength is now", character.strength)
+        print(bcolors.OKGREEN +
+              "Your strength is now",
+              character.strength, "\n")
         return character
 
 
@@ -251,8 +256,8 @@ def battle_state(character):
                 if enemy.health > 1:
                     character.health = character.health - enemy.strength
                     print(bcolors.OKGREEN + enemy.name,
-                          "retaliates like a maniac,"
-                          "they clobber you! Reducing"
+                          "retaliates like a maniac, "
+                          "they clobber you! Reducing "
                           "your health to", character.health)
                     game_over(character)
 
@@ -270,18 +275,24 @@ def battle_state(character):
                         character.score = character.score + 13
 
                     print(bcolors.OKGREEN + "You kicked the shit out of",
-                          enemy.name, "they are very dead... for now\n")
+                          enemy.name, "they are very dead... for now")
+                    # empty string for color change
+                    print(bcolors.CWHITE + "")
+                    loot_text = pyfiglet.figlet_format("L O O T - F O U N D",
+                                                       font="alphabet")
+                    print("\n")
+                    print(loot_text)
                     print(bcolors.OKGREEN + "But wait!",
                           enemy.name, "dropped something of value\n")
                     lootDrop = loot()
-                    print("You just got a", lootDrop, + "\n")
+                    print("You just got a", lootDrop, "\n")
                     loot_effect(lootDrop, character)
                     return character.score
                     break
             else:
                 print(
                     bcolors.OKGREEN + "You look class "
-                    "holding your gun sideways but"
+                    "holding your gun sideways but "
                     "sadly you miss", enemy.name)
                 print(bcolors.OKGREEN + "You have angered",
                       enemy.name, "they attack viciously\n")
@@ -304,8 +315,8 @@ def battle_state(character):
                 if enemy.health > 0:
                     character.health = character.health - enemy.strength
                     print(bcolors.OKGREEN + enemy.name,
-                          "retaliates like a maniac,"
-                          "they clobber you! Reducing"
+                          "retaliates like a maniac, "
+                          "they clobber you! Reducing "
                           "your health to", character.health)
                     game_over(character)
 
@@ -324,10 +335,16 @@ def battle_state(character):
 
                     print(bcolors.OKGREEN + "You kicked the shit out of",
                           enemy.name, "they are very dead... for now\n")
+                    # empty string for color change
+                    print(bcolors.CWHITE + "")
+                    loot_text = pyfiglet.figlet_format("L O O T - F O U N D",
+                                                       font="alphabet")
+                    print("\n")
+                    print(loot_text)
                     print(bcolors.OKGREEN + "But wait!",
                           enemy.name, "dropped something of value\n")
                     lootDrop = loot()
-                    print(bcolors.OKGREEN + "You just got a", lootDrop)
+                    print(bcolors.OKGREEN + "You just got a", lootDrop, "\n")
                     loot_effect(lootDrop, character)
                     return character.score
                     break
@@ -433,10 +450,10 @@ def choice2(character):
     adventure game with input validation
     """
     print(bcolors.OKGREEN +
-          "You arrive in a strange"
+          "You arrive in a strange "
           "techno club where they are playing Rob Zombie...\n")
     print(bcolors.OKGREEN +
-          "A man you have never met"
+          "A man you have never met "
           "wearing sunglasses invites you to sit down...\n")
     answer = input(bcolors.OKGREEN +
                    "Do you want to take the"
@@ -470,7 +487,7 @@ def choice3(character):
         print(bcolors.OKGREEN +
               "Good he is going to teach you loads of cool shit...")
         print(bcolors.OKGREEN +
-              "But just as he is about to"
+              "But just as he is about to "
               "teach you how to jump over buildings...")
         battle_state(character)
 
@@ -492,13 +509,13 @@ def choice4(character):
     adventure game with input validation
     """
     answer = input(bcolors.OKGREEN +
-                   "A woman called the Oracle"
-                   "asks you if you want to"
+                   "A woman called the Oracle "
+                   "asks you if you want to "
                    "risk all for love? (yes/no)\n").lower().strip()
     if answer == "yes":
         print(bcolors.OKGREEN + "She smiles\n")
         print(bcolors.OKGREEN +
-              "You brought peace between"
+              "You brought peace between "
               "Man and Machine. You won the game you legend!")
         game_over(character, True)
 
