@@ -59,4 +59,9 @@ The objectives of the site owner are:
 
 - I imported sys and sleep and used the time delay to make the text appear as if it is being typed like in the film and create the sense that you are having a real time conversation with the machine.
 
-- 
+- I used color classes to make the text in the terminal appear green
+
+- I used an ascii art illustration for the white rabbit that appears which I have credited in the 'credits' section of this readme
+
+![Intro Section](/assets/images/intro_section.png)
+
