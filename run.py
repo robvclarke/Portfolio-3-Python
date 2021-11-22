@@ -353,20 +353,20 @@ def story_intro():
         sleep(0.1)
         print(bcolors.OKGREEN + char, end='', flush=True)
     print(bcolors.CWHITE + """
-       /gg\           /gg\ 
-      /g.gg\         /gg.g\ 
-     |gg..gg\       /gg..gg| 
-     |gg...g|       |g...gg| 
-     |gg...g|       |g...gg| 
-      \gg..g/       \g..gg/ 
-       |gg.gvgggggggvg.gg| 
-      /ggggggggggggggggggg\ 
-     /gggg(((ggggggg)))gggg\ 
-    |ggggg....ggggg....ggggg| 
-    |ggggg....ggggg....ggggg| 
-    |ggcccgggg\___/ggggcccgg| 
-    |ggcccccgggg|ggggcccccgg| 
-      \gcccggg\---/gggcccg/ 
+       /gg\           /gg\\
+      /g.gg\         /gg.g\\
+     |gg..gg\       /gg..gg|
+     |gg...g|       |g...gg|
+     |gg...g|       |g...gg|
+      \gg..g/       \g..gg/
+       |gg.gvgggggggvg.gg|
+      /ggggggggggggggggggg\\
+     /gggg(((ggggggg)))gggg\\
+    |ggggg....ggggg....ggggg|
+    |ggggg....ggggg....ggggg|
+    |ggcccgggg\___/ggggcccgg|
+    |ggcccccgggg|ggggcccccgg|
+      \gcccggg\---/gggcccg/
          \ggggggggggggg/
         """)
 
