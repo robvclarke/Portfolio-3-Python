@@ -77,6 +77,16 @@ After correctly mainly lines that were too long and some indentations after text
 
 - Heroku for providing the deployment site
 
+- I used 'Figma' to create the flow chart in this readme
+
+- The 'Love Sandwhiches' code institute essentials project was a great reference when troubleshooting bugs
+
+- Stack Overflow for helping me figure out how to print colored text to the terminal [Stack Overflow](https://stackoverflow.com/questions/287871/how-to-print-colored-text-to-the-terminal)
+
+- Stack Overflow for helping me figure out how to have a typing effect in the terminal [Stack Overflow](https://stackoverflow.com/questions/20302331/typing-effect-in-python)
+
+- I used the website 'Am I Responsive' to create the banner image at the top of this readme [Am I responsive?](http://ami.responsivedesign.is)
+ 
 - When I was first trying to get my head around how I might make this game this video was helpful [Youtube Tutorial](https://www.youtube.com/watch?v=DEcFCn2ubSg&t=2s&ab_channel=TechWithTim)
 
 - This series of youtube tutorials provided a good base which I was able to build on when creating my game [Youtube Tutorial](https://www.youtube.com/playlist?list=PLJPiff845eg8hBMJNo6Y2Yo7LKAB8oedh)
