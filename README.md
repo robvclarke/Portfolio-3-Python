@@ -121,8 +121,10 @@ Each time you connect you take health off the enemy and then he retaliates takin
 
 8. Writing your score/viewing high scores
 
-- 
+- The write score function is called within gameover which allows the user to add their name to their final score. 
+- The game over function then prints out this list for the user so they can compare their score to their previous one or other peoples scores who have played the game. 
 
+![Gameover](/assets/images/write_score.png)
 
 ## Testing
 ### PEP8 Online Code Checker
