@@ -92,7 +92,14 @@ The objectives of the site owner are:
 
 ![Fight Mode](/assets/images/fight_mode.png)
 
+- the fight mode text illustration is generated using Figlet
 
+- You can type either 1,2 or 3 on the keyboard for a choice of 2 attacks and 1 option to try run away. All of these have a randomly generated likelyhood of whether they will connect or no generated via the hitchance variable and the random module.
+Each time you connect you take health off the enemy and then he retaliates taking health off of you. If you health drops to zero or below it is a gameover. A while loop keeps the fight going until either your health is zero or the enemies health is zero. 
+
+- There is input validation if you enter anything other than 1,2 or 3 into the keyboard.
+
+![Fight Mode 2](/assets/images/fight_mode_two.png)
 
 
 ## Testing
