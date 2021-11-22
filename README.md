@@ -138,7 +138,7 @@ Key technologies used to create this game are shown below:
 - [Python Essentials Template](https://github.com/Code-Institute-Org/python-essentials-template) provided by the code institute was used to display the terminal on the webpage via Heroku
 - [Random](https://docs.python.org/3/library/random.html) module was used to create randomly selected enemies, loot and success in the fight mode
 - [Time](https://docs.python.org/3/library/time.html) Module was used to create the typing effect in the intro
-- [Figlet](http://www.figlet.org/)Figlet used to create the text banners
+- [Figlet](http://www.figlet.org/) used to create the text banners
 
 ## Testing
 ### PEP8 Online Code Checker
@@ -148,6 +148,30 @@ After correcting lines that were too long and some indentations/white space afte
 
 The text colors I chose based the lighthouse test for accessibility with an overall score of 98 
 ![Lighthouse](/assets/images/lighthouse.png)
+
+## Deployment 
+
+The deployment of my application was done in the following way:
+
+1. Push the latest version of my code to the project repo in Github
+2. Make sure all requirements will be accounted for when it is in heroku by entering 'pip install -r requirements.txt'
+3. Push again to make sure these requirments have been sent to Github
+4. Login to the Heroku website
+5. Create a new app
+6. Add a name and region for the app
+7. Once the app has been created go into the settings tab
+8. Click on Reveal Config Vars
+9. For the key add 'PORT' and for the value add '8000'
+10. Add a buildpack and choose python. Then repeat this step for Node.js
+11. Go into the deploy tab
+12. For deployment method you want to select Github, it will then say connected
+13. Connect the correct repo in github by searching for it in the bar provided
+14. Enable Automatic deploys
+15. Any time new code is pushed to github it will then automatically build in Heroku
+16. You can click open app on the application page in heroku to view it and it will open in a new tab
+
+My deployed site is viewable at: [My Live Site](https://enter-the-matrix.herokuapp.com/)
+
 
 ## Credits
 
