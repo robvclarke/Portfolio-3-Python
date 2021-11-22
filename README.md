@@ -48,3 +48,7 @@ The objectives of the site owner are:
 - I used a green font to align with the style of the terminal that appears in the matrix film. I used white for the 'white rabbit' ascii illustration as I felt it was natural and then white for the Fight Mode Pfiglet Fonts. I used red for the error messages to make them stand out. 
 
 - I created a flow diagram at the beginning of the project to guide the code and help me plan out the game 
+
+![Flow Chart](/assets/images/data_model.jpg)
+
+[Link to the Figma File where I created the flow chart](https://www.figma.com/file/TMEWK4XjZFX8ABdLRUKPY8/Flow-Chart?node-id=0%3A1)
