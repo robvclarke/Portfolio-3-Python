@@ -118,7 +118,7 @@ After correcting lines that were too long and some indentations/white space afte
 ![Pep8](/assets/images/pep8_testing.png)
 
 The text colors I chose based the lighthouse test for accessibility with an overall score of 98 
-![Lighthouse](/assets/images/lighthouse.png)
+![Lighthouse](/assets/images/loot_feature.png)
 
 ## Credits
 
