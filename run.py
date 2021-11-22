@@ -80,7 +80,9 @@ def game_over(character, full_health: bool = False):
         exit()
 
     if character.health < 1:
-        print(bcolors.OKGREEN + "You are out of health and about to be made slave concubine to the Deus Ex Machina for the remainder of your days\n")
+        print(bcolors.OKGREEN + "You are out of health and about to be"
+                                "made slave concubine to the Deus Ex Machina"
+                                "for the remainder of your days\n")
         # this empty string is to change the colour of the figlet text
         print(bcolors.CWHITE + "")
         gameover = pyfiglet.figlet_format("G A M E _ O V E R", font="alphabet")
@@ -156,7 +158,9 @@ def hero_select():
 
 def enemy_select(Agent, Sentinel, Smith):
     """
-    Function for randomly selecting the enemy you will face when a battle occurs
+    Function for randomly selecting
+    the enemy you will face
+    when a battle occurs
     """
     enemyList = [Agent, Sentinel, Smith]
     chance = random.randint(0, 2)
@@ -166,7 +170,9 @@ def enemy_select(Agent, Sentinel, Smith):
 
 def loot():
     """
-    Function for randomly selecting the loot the enemy will drop after you fight it
+    Function for randomly
+    selecting the loot the
+    enemy will drop after you fight it
     """
     loot = ["Uzi", "Leather Jacket", "Katana"]
     lootChance = random.randint(0, 2)
@@ -176,12 +182,16 @@ def loot():
 
 def loot_effect(lootDrop, character):
     """
-    Function to for the loot you get adding to your characters strength attribute
+    Function to for the
+    loot you get adding
+    to your characters strength attribute
     """
     if lootDrop == "Uzi":
         character.strength = character.strength + 5
         print(bcolors.OKGREEN +
-              "You cock the Uzi and put it in your jacket! Increasing your strength by 5")
+              "You cock the Uzi and put"
+              "it in your jacket! Increasing"
+              "your strength by 5")
         print(bcolors.OKGREEN + "Your strength is now", character.strength)
         return character
 
@@ -195,7 +205,9 @@ def loot_effect(lootDrop, character):
     elif lootDrop == "Katana":
         character.strength = character.strength + 8
         print(bcolors.OKGREEN +
-              "You sheath the katana and strap it to your back! Increasing your strength by 8")
+              "You sheath the katana and strap"
+              "it to your back!"
+              "Increasing your strength by 8")
         print(bcolors.OKGREEN + "Your strength is now", character.strength)
         return character
 
@@ -204,8 +216,9 @@ def battle_state(character):
     """
     Function for the fight sequences
     Random enemy is generated
-    You have three options for how to behave
-    These have a hitchance that is randomly generated to keep the fights interesting
+    You have three options for how to fight
+    These options have a hitchance
+    that is randomly generated to keep the fights interesting
     Input validation if present if the user doesnt push either 1,2 or 3
     """
     enemy = enemy_select(Agent, Sentinel, Smith)
@@ -216,12 +229,15 @@ def battle_state(character):
     print(result)
     print(bcolors.OKGREEN + "")
     print(bcolors.OKGREEN + "Shit!", enemy.name, "just crashed the party...")
-    print(bcolors.OKGREEN + "You are probably fucked but you have three options...\n")
+    print(bcolors.OKGREEN + "You are probably"
+                            "fucked but you have three options...\n")
     print(bcolors.OKGREEN +
           "Type either 1, 2 or 3 on your keyboard to make your selection")
     while enemy.health > 0:
         choice = input(
-            "1. Shoot at enemy while holding gun sideways\n2. Slow-mo dodge the enemy then Kung Fu their ass\n3. Run for your life\n")
+            "1. Shoot at enemy while holding gun sideways"
+            "\n2. Slow-mo dodge the enemy then Kung Fu their ass"
+            "\n3. Run for your life\n")
 
         if choice == "1":
             print(bcolors.OKGREEN + "You let off a clip, riddling",
@@ -235,7 +251,9 @@ def battle_state(character):
                 if enemy.health > 1:
                     character.health = character.health - enemy.strength
                     print(bcolors.OKGREEN + enemy.name,
-                          "retaliates like a maniac, they clobber you! Reducing your health to", character.health)
+                          "retaliates like a maniac,"
+                          "they clobber you! Reducing"
+                          "your health to", character.health)
                     game_over(character)
 
                 else:
@@ -262,15 +280,20 @@ def battle_state(character):
                     break
             else:
                 print(
-                    bcolors.OKGREEN + "You look class holding your gun sideways but sadly you miss", enemy.name)
+                    bcolors.OKGREEN + "You look class"
+                    "holding your gun sideways but"
+                    "sadly you miss", enemy.name)
                 print(bcolors.OKGREEN + "You have angered",
                       enemy.name, "they attack viciously\n")
                 character.health = character.health - enemy.strength
-                print(bcolors.OKGREEN + "Your health is now:", character.health)
+                print(bcolors.OKGREEN +
+                      "Your health is now:",
+                      character.health)
                 game_over(character)
 
         elif choice == "2":
-            print(bcolors.OKGREEN + "You bend backwards in slow motion dodging",
+            print(bcolors.OKGREEN +
+                  "You bend backwards in slow motion dodging",
                   enemy.name, "and then let fly with a Kung-Fu kick!")
             hitchance = random.randint(0, 10)
             if hitchance > 3:
@@ -281,7 +304,9 @@ def battle_state(character):
                 if enemy.health > 0:
                     character.health = character.health - enemy.strength
                     print(bcolors.OKGREEN + enemy.name,
-                          "retaliates like a maniac, they clobber you! Reducing your health to", character.health)
+                          "retaliates like a maniac,"
+                          "they clobber you! Reducing"
+                          "your health to", character.health)
                     game_over(character)
 
                 else:
@@ -312,28 +337,37 @@ def battle_state(character):
                 print(bcolors.OKGREEN + enemy.name,
                       "is furious and attacks wildly\n")
                 character.health = character.health - enemy.strength
-                print(bcolors.OKGREEN + "Your health is now:", character.health)
+                print(bcolors.OKGREEN +
+                      "Your health is now:",
+                      character.health)
                 game_over(character)
 
         elif choice == "3":
             print(bcolors.OKGREEN + "You try to run...")
             runchance = random.randint(1, 10)
             if runchance > 4:
-                print(bcolors.OKGREEN + "You leg it inside a phonebox and escape")
+                print(bcolors.OKGREEN +
+                      "You leg it inside a phonebox and escape")
                 break
             else:
                 print(
-                    bcolors.OKGREEN + "As you try to run, your leather snags on something and you slip\n")
+                    bcolors.OKGREEN +
+                    "As you try to run, your"
+                    "leather snags on something and you slip\n")
                 print(bcolors.OKGREEN + enemy.name,
-                      "laughs at your cowards and then attacks in a bloodythirsty fashion\n")
+                      "laughs at your cowardice"
+                      "and then attacks in a bloodythirsty fashion\n")
                 character.health = character.health - enemy.strength
                 print(
-                    bcolors.OKGREEN + "Your health has taken a whack it is now:", character.health)
+                    bcolors.OKGREEN +
+                    "Your health has taken a whack it is now:",
+                    character.health)
                 game_over(character)
 
         else:
-            print(
-                bcolors.CRED + "Input Error! You must only type the number 1,2 or 3 on the keyboard.\n")
+            print(bcolors.CRED +
+                  "Input Error! You must only type"
+                  "the number 1,2 or 3 on the keyboard.\n")
 
 
 def story_intro():
@@ -373,10 +407,13 @@ def story_intro():
 
 def choice1(character):
     """
-    The first decision point of this choose your own adventure game with input validation
+    The first decision point
+    of this choose your own
+    adventure game with input validation
     """
     answer = input(bcolors.OKGREEN +
-                   "Would you like to follow the white rabbit?(yes/no)\n").lower().strip()
+                   "Would you like to follow"
+                   "the white rabbit?(yes/no)\n").lower().strip()
     if answer.lower().strip() == "yes":
         battle_state(character)
 
@@ -391,14 +428,19 @@ def choice1(character):
 
 def choice2(character):
     """
-    The second decision point of this choose your own adventure game with input validation
+    The second decision point of
+    this choose your own
+    adventure game with input validation
     """
     print(bcolors.OKGREEN +
-          "You arrive in a strange techno club where they are playing Rob Zombie...\n")
+          "You arrive in a strange"
+          "techno club where they are playing Rob Zombie...\n")
     print(bcolors.OKGREEN +
-          "A man you have never met wearing sunglasses invites you to sit down...\n")
+          "A man you have never met"
+          "wearing sunglasses invites you to sit down...\n")
     answer = input(bcolors.OKGREEN +
-                   "Do you want to take the red pill or the blue pill?(red/blue)\n").lower().strip()
+                   "Do you want to take the"
+                   "red pill or the blue pill?(red/blue)\n").lower().strip()
     if answer == "red":
         battle_state(character)
 
@@ -414,21 +456,27 @@ def choice2(character):
 
 def choice3(character):
     """
-    The third decision point of this choose your own adventure game with input validation
+    The third decision point
+    of this choose your own
+    adventure game with input validation
     """
-    print(bcolors.OKGREEN + "The man explains to you that reality is a construct...\n")
+    print(bcolors.OKGREEN +
+          "The man explains to you that reality is a construct...\n")
     print(bcolors.OKGREEN +
           "He explains that you are potentially a saviour to all mankind...\n")
     answer = input("Do you trust him? (yes/no)\n").lower().strip()
 
     if answer == "yes":
-        print(bcolors.OKGREEN + "Good he is going to teach you loads of cool shit...")
         print(bcolors.OKGREEN +
-              "But just as he is about to teach you how to jump over buildings...")
+              "Good he is going to teach you loads of cool shit...")
+        print(bcolors.OKGREEN +
+              "But just as he is about to"
+              "teach you how to jump over buildings...")
         battle_state(character)
 
     elif answer == "no":
-        print(bcolors.OKGREEN + "He senses your distrust and removes your mouth\n")
+        print(bcolors.OKGREEN +
+              "He senses your distrust and removes your mouth\n")
         print(bcolors.OKGREEN + "He then shoots you in the head\n")
         game_over(character, True)
 
@@ -439,14 +487,19 @@ def choice3(character):
 
 def choice4(character):
     """
-    The fourth decision point of this choose your own adventure game with input validation
+    The fourth decision point
+    of this choose your own
+    adventure game with input validation
     """
     answer = input(bcolors.OKGREEN +
-                   "A woman called the Oracle asks you if you want to risk all for love? (yes/no)\n").lower().strip()
+                   "A woman called the Oracle"
+                   "asks you if you want to"
+                   "risk all for love? (yes/no)\n").lower().strip()
     if answer == "yes":
         print(bcolors.OKGREEN + "She smiles\n")
         print(bcolors.OKGREEN +
-              "You brought peace between Man and Machine. You won the game you legend!")
+              "You brought peace between"
+              "Man and Machine. You won the game you legend!")
         game_over(character, True)
 
     elif answer == "no":
