@@ -84,7 +84,13 @@ The objectives of the site owner are:
 - If you select 'no' the gameover() function is called and you will have a score of '0' which the user can choose to write to the highscore list in the .txt file via the writescore() function within the gameover() function.
 - If you type anything other than yes or no their is input validation asking you to type either yes or no and reprompting you to make your decision. 
 
-![choice1](/assets/images/error_validation.png)
+![choice1](/assets/images/choice1.png)
+
+5. Fight Mode
+
+- The fight modes are triggered by the battlestate() function which randomly generates an enemy using the random module to select from the three enemy classes I created which represent bad guys that appear in the Matrix film. 
+
+![Fight Mode](/assets/images/fight_mode.png)
 
 
 
