@@ -52,3 +52,11 @@ The objectives of the site owner are:
 ![Flow Chart](/assets/images/data_model.jpg)
 
 [Link to the Figma File where I created the flow chart](https://www.figma.com/file/TMEWK4XjZFX8ABdLRUKPY8/Flow-Chart?node-id=0%3A1)
+
+2. Intro to the story
+
+- The intro text is the exact text that Neo sees appear on his screen at the start of the film. Like in the film what is happening is still a mystery at this point. The user is told to follow the white rabbit down the rabbit hole like alice in wonderland if they are curious.
+
+- I imported sys and sleep and used the time delay to make the text appear as if it is being typed like in the film and create the sense that you are having a real time conversation with the machine.
+
+- 
