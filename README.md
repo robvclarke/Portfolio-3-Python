@@ -132,6 +132,8 @@ Each time you connect you take health off the enemy and then he retaliates takin
 
 - If I had more time I would have liked to have made a shop where you could potentially visit to buy and sell items which would increase your stats.
 
+- I would like to have the high score list appear in order of Top of bottom highest scores when it is printed out at the end. 
+
 ## Technolgies
 
 Key technologies used to create this game are shown below:
@@ -182,6 +184,8 @@ and thus had no input validation for when users entered something other than wha
 2. There is two types of gameover. When you die as a result of running out of health and when you die as a result of making a wrong decision in the game. Figuring out how to trigger the gameover function in both instances was challenging with my eventual solution using a boolean to solve it and indicating it was true when a game over was triggered not as a result of low health. 
 
 ![Gameover Code](/assets/images/gameover_code.png)
+
+3. I initially had the score as a global variable that I was passing into the functions but it was resulting in errors so I switched to the score being an attribute of the character objects that gets added to and this worked with the score carrying over with the character. 
 
 
 

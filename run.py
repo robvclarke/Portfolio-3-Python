@@ -37,7 +37,7 @@ def game_over(character, full_health: bool = False):
         exit()
 
     if character.health < 1:
-        print(TerminalColors.OKGREEN + "You are out of health and about to be"
+        print(TerminalColors.OKGREEN + "You are out of health and about to be "
               "made slave concubine to the Deus Ex Machina"
               "for the remainder of your days\n")
         # this empty string is to change the colour of the figlet text
@@ -315,11 +315,11 @@ def battle_state(character):
             else:
                 print(
                     TerminalColors.OKGREEN +
-                    "As you try to run, your"
+                    "As you try to run, your "
                     "leather snags on something and you slip\n")
                 print(TerminalColors.OKGREEN + enemy.name,
-                      "laughs at your cowardice"
-                      "and then attacks in a bloodythirsty fashion\n")
+                      "laughs at your cowardice "
+                      "and then attacks in a bloodthirsty fashion\n")
                 character.health = character.health - enemy.strength
                 print(
                     TerminalColors.OKGREEN +
@@ -375,7 +375,7 @@ def choice1(character):
     adventure game with input validation
     """
     answer = input(TerminalColors.OKGREEN +
-                   "Would you like to follow"
+                   "Would you like to follow "
                    "the white rabbit?(yes/no)\n").lower().strip()
     if answer.lower().strip() == "yes":
         battle_state(character)
@@ -402,7 +402,7 @@ def choice2(character):
           "A man you have never met "
           "wearing sunglasses invites you to sit down...\n")
     answer = input(TerminalColors.OKGREEN +
-                   "Do you want to take the"
+                   "Do you want to take the "
                    "red pill or the blue pill?(red/blue)\n").lower().strip()
     if answer == "red":
         battle_state(character)
