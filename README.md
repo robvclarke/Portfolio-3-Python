@@ -189,9 +189,9 @@ and thus had no input validation for when users entered something other than wha
 
 ![Score code](/assets/images/score_code.png)
 
-4. The trickiest bug I encountered was occasionally my character object attributes were not being found but then if I ran the code and did the exact same thing the bug would not appear. 
+4. The trickiest bug I encountered was occasionally my character object attributes were not being found but then if I ran the code and did the exact same thing the bug would not appear so was very confusing to me. 
 
-![Tricky Bug](/assets/images/score_code.png)
+![Tricky Bug](/assets/images/tricky_bug.png)
 
 I ended up changing the function for when you select your character to the below and managed to resolve this via having the character initally = none and then using a while not statement.
 
@@ -204,6 +204,10 @@ After correcting lines that were too long and some indentations/white space afte
 
 The text colors I chose based the lighthouse test for accessibility with an overall score of 98 
 ![Lighthouse](/assets/images/lighthouse.png)
+
+### Unfixed bugs
+
+There are not any bugs left in the application that I am aware of. 
 
 ## Deployment 
 
