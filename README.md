@@ -128,6 +128,10 @@ Each time you connect you take health off the enemy and then he retaliates takin
 
 ![Gameover](/assets/images/write_score.png)
 
+### Potential Future Features
+
+- If I had more time I would have liked to have made a shop where you could potentially visit to buy and sell items which would increase your stats.
+
 ## Technolgies
 
 Key technologies used to create this game are shown below:
@@ -143,6 +147,44 @@ Key technologies used to create this game are shown below:
 - [Figlet](http://www.figlet.org/) used to create the text banners
 
 ## Testing
+
+### User Needs
+
+I will now go through my user needs and how my application is meeting them: 
+
+1. To have their curiosity picked by the opening Alice in Wonderland style call to action
+
+I feel like this goal is being achieved via the use of the exact dialogue that appears in the film, the type delay effect making it seem like it is happening in real time and the colors in the terminal being in line with what appears in the film. 
+
+2. To find the programme easy to play
+
+Playing the game requires just simple keyboard inputs like (yes/no) or (1,2,3) and error validation occurs if users stray from these. I feel like when the user makes a wrong decision and the game ends there is a humorous pay off in the script that means they want to play again. 
+
+3. To find the choices they take interesting and reward their knowledge of the Matrix film. 
+
+The choices that result in continuation or death in the game might seem arbitrary if you are not familiar with the film but they follow the choices of the main protagonist in the original motion picture. You have to take the red pill, trust Morpheus and ultimatley risk everything for love in order to complete the game just like Neo had to in the film. 
+
+4. To play a game with a variety of decision points, enemies and rewards so it has replayability.
+
+The game has multiple decision points, three different enemies which are randomly selected each time you enter Fight Mode and a humours take on the matrix universe which I feel will lend the game to having replayability. 
+
+5. To be able to log their final score and see the HIGH SCORE list of other players.
+
+Users are able to have their high score logged to the .txt file and see the file printed out with other peoples scores each time they get a game over which makes the game competitive with both you yourself and others. 
+
+### Challenges
+
+1. I intially had all my decision points in a function called main_storyline() but I kept getting trapped in the while loops
+and thus had no input validation for when users entered something other than what was requested. I split these out into a seperate function for each decision point and thus was able to have input validation with error messaging.
+
+![Gameover](/assets/images/write_score.png)
+
+
+
+2. There is two types of gameover. When you 
+
+
+
 ### PEP8 Online Code Checker
 
 After correcting lines that were too long and some indentations/white space after text the code in my run.py file passed the Pep8 online code checker with no errors
@@ -183,7 +225,7 @@ My deployed site is viewable at: [My Live Site](https://enter-the-matrix.herokua
 
 - I used 'Figma' to create the flow chart in this readme
 
-- The 'Love Sandwhiches' code institute essentials project was a great reference when troubleshooting bugs
+- The 'Love Sandwhiches' code institute essentials project was a great reference when troubleshooting bugs and deploying to Heroku. 
 
 - Stack Overflow for helping me figure out how to print colored text to the terminal [Stack Overflow](https://stackoverflow.com/questions/287871/how-to-print-colored-text-to-the-terminal)
 
@@ -200,5 +242,7 @@ My deployed site is viewable at: [My Live Site](https://enter-the-matrix.herokua
 - The Fight-Mode and Game-Over text banners were created using Figlet [Figlet](https://en.wikipedia.org/wiki/FIGlet)
 
 - My mentor Reuben Ferrante for his guidance throughout the project
+
+- My girlfriend Anne for being understanding about me spending all my weekends doing this course.
 
  
