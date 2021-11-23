@@ -132,7 +132,7 @@ Each time you connect you take health off the enemy and then he retaliates takin
 
 - If I had more time I would have liked to have made a shop where you could potentially visit to buy and sell items which would increase your stats.
 
-- I would like to have the high score list appear in order of Top of bottom highest scores when it is printed out at the end. 
+- I would like to have the high score list appear in order of 'Top to Bottom' highest scores when it is printed out at the end. 
 
 ## Technolgies
 
@@ -186,6 +186,8 @@ and thus had no input validation for when users entered something other than wha
 ![Gameover Code](/assets/images/gameover_code.png)
 
 3. I initially had the score as a global variable that I was passing into the functions but it was resulting in errors so I switched to the score being an attribute of the character objects that gets added to and this worked with the score carrying over with the character. 
+
+![Gameover Code](/assets/images/score_code.png)
 
 
 

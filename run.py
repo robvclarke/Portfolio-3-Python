@@ -122,9 +122,10 @@ def loot():
 
 def loot_effect(lootDrop, character):
     """
-    Function to for the
+    Function for the
     loot you get adding
     to your characters strength attribute
+    after a fight
     """
     if lootDrop == "Uzi":
         character.strength = character.strength + 5
