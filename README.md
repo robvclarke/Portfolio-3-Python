@@ -193,7 +193,7 @@ and thus had no input validation for when users entered something other than wha
 
 ![Tricky Bug](/assets/images/score_code.png)
 
-I ended up changing the function for when you select your character to the below and managed to resolve this via having the character initally = none and the a while not statement.
+I ended up changing the function for when you select your character to the below and managed to resolve this via having the character initally = none and then using a while not statement.
 
 ![Solution](/assets/images/character_code.png)
 
