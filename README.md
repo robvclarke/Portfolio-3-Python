@@ -103,7 +103,9 @@ Each time you connect you take health off the enemy and then he retaliates takin
 
 ![Fight Mode 2](/assets/images/fight_mode_two.png)
 
-- depending on which enemy you have defeated your characters score increases appropriatley which will then be printed out to you at the end of the game where you can add it to the high score list 
+- Depending on which enemy you have defeated your characters score increases appropriatley which will then be printed out to you at the end of the game where you can add it to the high score list 
+
+- Your score however will run increase if you choose to just run away from your enemy
 
 6. Loot items
 

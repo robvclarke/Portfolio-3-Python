@@ -3,7 +3,7 @@ import random
 # class for green text
 
 
-class bcolors:
+class TerminalColors:
     OKGREEN = '\033[92m'
     HEADER = '\033[95m'
     CWHITE = '\33[37m'
