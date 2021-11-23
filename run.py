@@ -2,59 +2,15 @@ import random
 import pyfiglet
 import sys
 from time import sleep
+from constants import Neo
+from constants import bcolors
+from constants import Morpheus
+from constants import Trinity
+from constants import Agent
+from constants import Sentinel
+from constants import Smith
 
-# class for green text
-
-
-class bcolors:
-    OKGREEN = '\033[92m'
-    HEADER = '\033[95m'
-    CWHITE = '\33[37m'
-    CRED = '\33[31m'
-
-# classes for characters you can choose to play as
-
-
-class Neo:
-    health = 40
-    strength = 11
-    score = 0
-
-
-class Morpheus:
-    health = 36
-    strength = 9
-    score = 0
-
-
-class Trinity:
-    health = 37
-    strength = 7
-    score = 0
-
-# classes for the enemies you will face
-
-
-class Agent:
-    name = "Standard Agent"
-    health = 20
-    strength = 5
-    loot = random.randint(0, 2)
-
-
-class Sentinel:
-    name = "Sentinel"
-    health = 15
-    strength = 4
-    loot = random.randint(0, 2)
-
-
-class Smith:
-    name = "Agent Smith"
-    health = 20
-    strength = 6
-    loot = random.randint(0, 2)
-
+HERO_CHOICES = {"1": Neo, "2": Morpheus, "3": Trinity}
 
 def game_over(character, full_health: bool = False):
     """
@@ -122,41 +78,23 @@ def hero_select():
     Function for choosing the hero character you wish to play as
     """
     print(bcolors.OKGREEN + "Who would you like to play as?\n")
-    selection = input(bcolors.OKGREEN + "1. Neo \n2. Morpheus \n3. Trinity \n")
-    if selection == "1":
-        character = Neo
-        print(bcolors.OKGREEN +
-              "You have selected Neo... These are his game stats...\n")
-        print(bcolors.OKGREEN + "Health - ", character.health)
-        print(bcolors.OKGREEN + "Strength - ", character.strength)
-        print("\n")
-        return character
-
-    elif selection == "2":
-        character = Morpheus
-        print(bcolors.OKGREEN +
-              "You have selected Morpheus... These are his game stats...")
-        print(bcolors.OKGREEN + "Health - ", character.health)
-        print(bcolors.OKGREEN + "Strength - ", character.strength)
-        print("\n")
-        return character
-
-    elif selection == "3":
-        character = Trinity
-        print(bcolors.OKGREEN +
-              "You have selected Trinity... These are her game stats...")
-        print(bcolors.OKGREEN + "Health - ", character.health)
-        print(bcolors.OKGREEN + "Strength - ", character.strength)
-        print("\n")
-        return character
-
-    else:
-        print(bcolors.CRED + "Input Error! Only press 1,2 or 3")
-        print("\n")
-        hero_select()
+    character = None
+    while not character:
+        selection = input(bcolors.OKGREEN + "1. Neo \n2. Morpheus \n3. Trinity \n")
+        character = HERO_CHOICES.get(selection)
+        if character:
+            print(bcolors.OKGREEN +
+                "You have selected Neo... These are his game stats...\n")
+            print(bcolors.OKGREEN + "Health - ", character.health)
+            print(bcolors.OKGREEN + "Strength - ", character.strength)
+            print("\n")
+            return character
+        else:
+            print(bcolors.CRED + "Input Error! Only press 1,2 or 3")
+            print("\n")
 
 
-def enemy_select(Agent, Sentinel, Smith):
+def enemy_select():
     """
     Function for randomly selecting
     the enemy you will face
@@ -226,7 +164,7 @@ def battle_state(character):
     that is randomly generated to keep the fights interesting
     Input validation if present if the user doesnt push either 1,2 or 3
     """
-    enemy = enemy_select(Agent, Sentinel, Smith)
+    enemy = enemy_select()
     # this empty string is to change the colour of the figlet text
     print(bcolors.CWHITE + "")
     result = pyfiglet.figlet_format("F I G H T - M O D E", font="alphabet")
