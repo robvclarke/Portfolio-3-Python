@@ -187,7 +187,15 @@ and thus had no input validation for when users entered something other than wha
 
 3. I initially had the score as a global variable that I was passing into the functions but it was resulting in errors so I switched to the score being an attribute of the character objects that gets added to and this worked with the score carrying over with the character. 
 
-![Gameover Code](/assets/images/score_code.png)
+![Score code](/assets/images/score_code.png)
+
+4. The trickiest bug I encountered was occasionally my character object attributes were not being found but then if I ran the code and did the exact same thing the bug would not appear. 
+
+![Tricky Bug](/assets/images/score_code.png)
+
+I ended up changing the function for when you select your character to the below and managed to resolve this via having the character initally = none
+
+![Solution](/assets/images/score_code.png)
 
 
 
