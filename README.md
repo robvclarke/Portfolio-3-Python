@@ -177,11 +177,14 @@ Users are able to have their high score logged to the .txt file and see the file
 1. I intially had all my decision points in a function called main_storyline() but I kept getting trapped in the while loops
 and thus had no input validation for when users entered something other than what was requested. I split these out into a seperate function for each decision point and thus was able to have input validation with error messaging.
 
-![Gameover](/assets/images/write_score.png)
+![Input Validation Code](/assets/images/input_validation_code.png)
+
+2. There is two types of gameover. When you die as a result of running out of health and when you die as a result of making a wrong decision in the game. Figuring out how to trigger the gameover function in both instances was challenging with my eventual solution using a boolean to solve it and indicating it was true when a game over was triggered not as a result of low health. 
+
+![Gameover Code](/assets/images/gameover_code.png)
 
 
 
-2. There is two types of gameover. When you 
 
 
 
