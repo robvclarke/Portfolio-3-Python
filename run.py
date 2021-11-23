@@ -78,7 +78,8 @@ def hero_select():
     """
     Function for choosing the hero character you wish to play as
     """
-    print(TerminalColors.OKGREEN + "Who would you like to play as?\n")
+    print(TerminalColors.OKGREEN +
+          "Who would you like to play as? (1,2 or 3)\n")
     character = None
     while not character:
         selection = input(TerminalColors.OKGREEN +
