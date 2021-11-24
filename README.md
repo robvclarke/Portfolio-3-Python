@@ -4,7 +4,7 @@
 
 [Link to live website](https://enter-the-matrix.herokuapp.com/)
 
-A choose your own adventure game based on the sci-fi classic the matrix. 
+A choose your own adventure game based on the sci-fi film classic 'The Matrix'. 
 
 ## Project Inspiration
 

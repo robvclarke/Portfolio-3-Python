@@ -339,16 +339,10 @@ def story_intro():
     """
     Function for the intro to the game with type delay and ascii art
     """
-    line1 = "Wake Up.\n"
-    line2 = "The Matrix has you.\n"
-    line3 = "Follow the white rabbit...\n"
+    line1 = "Wake Up... \n"\
+            "The Matrix has you... \n"\
+            "Follow the white rabbit...\n"
     for char in line1:
-        sleep(0.1)
-        print(TerminalColors.OKGREEN + char, end='', flush=True)
-    for char in line2:
-        sleep(0.1)
-        print(TerminalColors.OKGREEN + char, end='', flush=True)
-    for char in line3:
         sleep(0.1)
         print(TerminalColors.OKGREEN + char, end='', flush=True)
     print(TerminalColors.CWHITE + """
