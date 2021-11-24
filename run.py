@@ -339,7 +339,7 @@ def story_intro():
     """
     Function for the intro to the game with type delay and ascii art
     """
-    line1 = "Wake Up... \n"\
+    line1 = "Wake up... \n"\
             "The Matrix has you... \n"\
             "Follow the white rabbit...\n"
     for char in line1:
