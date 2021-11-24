@@ -6,6 +6,23 @@
 
 A choose your own adventure game based on the sci-fi film classic 'The Matrix'. 
 
+## Table of contents
+1. [Project Inspiration](#Project-Inspiration)
+2. [UX](#UX)
+    * [Site owner goals](#site-owner-goals)
+    * [User needs](#user-needs)
+3. [Features](#features)
+    * [Existing features](#existing-features)
+    * [Features left to implement](#fPotential-Future-Features)
+4. [Technologies](#Technologies)
+5. [Testing](#testing)
+    * [User needs](#user-needs)
+    * [Challenges](#challenges)
+    * [PEP8 Online Code Checker](#PEP8-Online-Code-Checker)
+    * [Unfixed bugs](#Unfixed-bugs)
+6. [Deployment](#deployment)
+7. [Credits](#credits)
+    
 ## Project Inspiration
 
 For a lot of people of my generation, when we think of a computer terminal it is synonymous with the classic opening scene of the film 'The Matrix' with the classic lines:
