@@ -87,7 +87,7 @@ def hero_select():
         character = HERO_CHOICES.get(selection)
         if character:
             print(TerminalColors.OKGREEN +
-                  "You have selected Neo... These are his game stats...\n")
+                  f"You have selected {character.name}... These are their game stats...\n")
             print(TerminalColors.OKGREEN + "Health - ", character.health)
             print(TerminalColors.OKGREEN + "Strength - ", character.strength)
             print("\n")
