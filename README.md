@@ -2,26 +2,28 @@
 
 ![Am I responsive](/assets/images/project_image.png)
 
-[Link to live website](https://enter-the-matrix.herokuapp.com/)
+[Link to live website](https://enter-the-matrix-3fc39d0e40ff.herokuapp.com/)
 
 A choose your own adventure game based on the sci-fi film classic 'The Matrix'. 
 
 ## Table of contents
-1. [Project Inspiration](#Project-Inspiration)
-2. [UX](#UX)
-    * [Site owner goals](#site-owner-goals)
-    * [User needs](#user-needs)
-3. [Features](#features)
-    * [Existing features](#existing-features)
-    * [Features left to implement](#fPotential-Future-Features)
-4. [Technologies](#Technologies)
-5. [Testing](#testing)
-    * [User needs](#user-needs)
-    * [Challenges](#challenges)
-    * [PEP8 Online Code Checker](#PEP8-Online-Code-Checker)
-    * [Unfixed bugs](#Unfixed-bugs)
-6. [Deployment](#deployment)
-7. [Credits](#credits)
+- [Enter the Matrix - Choose your own adventure game](#enter-the-matrix---choose-your-own-adventure-game)
+  - [Table of contents](#table-of-contents)
+  - [Project Inspiration](#project-inspiration)
+  - [UX](#ux)
+    - [Site Owners Goals](#site-owners-goals)
+    - [User Needs](#user-needs)
+  - [Features](#features)
+    - [Existing Features](#existing-features)
+    - [Potential Future Features](#potential-future-features)
+  - [Technolgies](#technolgies)
+  - [Testing](#testing)
+    - [User Needs](#user-needs-1)
+    - [Challenges](#challenges)
+    - [PEP8 Online Code Checker](#pep8-online-code-checker)
+    - [Unfixed bugs](#unfixed-bugs)
+  - [Deployment](#deployment)
+  - [Credits](#credits)
     
 ## Project Inspiration
 
